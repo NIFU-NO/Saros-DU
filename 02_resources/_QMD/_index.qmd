@@ -1,0 +1,8 @@
+---
+format: html
+title: "Rapporter"
+---
+
+Velkommen til Deltakerundersøkelsenes interaktive rapporter. 
+
+Rapportene står oppført under det semesteret dataene ble innsamlet. Så for eksempel 2023V betyr at dataene ble innhentet våren 2023.

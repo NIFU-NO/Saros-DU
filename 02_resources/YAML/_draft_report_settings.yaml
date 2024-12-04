@@ -1,0 +1,5 @@
+organize_by:
+ - chapter
+ - .variable_label_prefix_dep
+ - .variable_type_dep
+ - .template_name

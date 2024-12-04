@@ -1,0 +1,25 @@
+website:
+  title: "Deltakerundersøkelsene"
+  site-url: "du.nifu.no"
+  navbar:
+    logo: "https://www.nifu.no/wp-content/uploads/logo_hvit.png"
+    left:
+      - file: "Main/om_prosjektet.qmd"
+  sidebar:
+    contents: "Rapporter"
+
+project_no: "21149"
+funder: Utdanningsdirektoratet
+funder_address: Schweigaards gate 15B, 0191 Oslo
+date-format: DD.MM.YYYY
+isbn: "978-82-327-0607-5"
+figure_table: true
+table_table: true
+report_type: rapport
+
+execute:
+  freeze: auto
+  cache: false
+
+metadata-files: # Defaults for all NIFU projects
+  - _global.yaml # Must be in same folder/subfolder
