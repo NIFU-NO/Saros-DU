@@ -1,0 +1,299 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 0.0
+
+---
+# Tilrettelegging
+```{r}
+#| label: 'Import data for 1_Tilrettelegg'
+data_1_Tilrettelegg <- qs::qread('1_Tilrettelegg/data_1_Tilrettelegg.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+## Hvordan ble tilretteleggingsmidlene brukt? Flere kryss mulig.{#sec-Hvordan-ble-tilretteleggingsmidlene-brukt-Flere-kryss-mulig--89}
+
+
+::: {#fig-tilrettelegging-s-21-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=6, n_cats_y=2, max_chars_cats_y=10, multiplier_per_plot=6)}
+tilrettelegging_s_21_fct_cat_plot_html <-
+	data_1_Tilrettelegg |>
+		makeme(dep = c(s_21_1,s_21_2,s_21_3,s_21_4,s_21_5,s_21_6),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(tilrettelegging_s_21_fct_cat_plot_html[[1]]))
+link <- make_link(data = tilrettelegging_s_21_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = tilrettelegging_s_21_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(tilrettelegging_s_21_fct_cat_plot_html)
+```
+
+_Hvordan ble tilretteleggingsmidlene brukt? Flere kryss mulig._. `{r} x`.
+
+:::
+
+
+## Hvordan er det blitt tilrettelagt for videreutdanningen?{#sec-Hvordan-er-det-blitt-tilrettelagt-for-videreutdanningen--16}
+
+
+::: {#fig-tilrettelegging-s-14-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=4, max_chars_cats_y=62, multiplier_per_plot=0.3)}
+tilrettelegging_s_14_fct_cat_plot_html <-
+	data_1_Tilrettelegg |>
+		makeme(dep = c(s_14),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(tilrettelegging_s_14_fct_cat_plot_html[[1]]))
+link <- make_link(data = tilrettelegging_s_14_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = tilrettelegging_s_14_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(tilrettelegging_s_14_fct_cat_plot_html)
+```
+
+_Hvordan er det blitt tilrettelagt for videreutdanningen?_. `{r} x`.
+
+:::
+
+
+## Hvordan vurderer du å kombinere{#sec-Hvordan-vurderer-du-a-kombinere-28}
+
+
+::: {#fig-tilrettelegging-s-20-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=2, n_cats_y=5, max_chars_cats_y=26, multiplier_per_plot=0.3)}
+tilrettelegging_s_20_fct_cat_plot_html <-
+	data_1_Tilrettelegg |>
+		makeme(dep = c(s_20_1,s_20_2),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(tilrettelegging_s_20_fct_cat_plot_html[[1]]))
+link <- make_link(data = tilrettelegging_s_20_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = tilrettelegging_s_20_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(tilrettelegging_s_20_fct_cat_plot_html)
+```
+
+_Hvordan vurderer du å kombinere_. `{r} x`.
+
+:::
+
+
+## I hvilken grad ble det tilrettelagt for videreutdanningen ved at andre avlastet deg for noen av dine oppgaver...{#sec-I-hvilken-grad-ble-det-tilrettelagt-for-videreutdanningen-ved-at-andre-avlastet-deg-for-noen-av-dine-oppgaver--78}
+
+
+::: {#fig-tilrettelegging-s-17-fct-cat-plot-html-1}
+
+```{r, fig.height = fig_height_h_barchart(n_y=2, n_cats_y=5, max_chars_cats_y=18, multiplier_per_plot=0.5)}
+tilrettelegging_s_17_fct_cat_plot_html_1 <-
+	data_1_Tilrettelegg |>
+		makeme(dep = c(s_17_3,s_17_4),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(tilrettelegging_s_17_fct_cat_plot_html_1[[1]]))
+link <- make_link(data = tilrettelegging_s_17_fct_cat_plot_html_1[[1]]$data)
+link_plot <- make_link(data = tilrettelegging_s_17_fct_cat_plot_html_1,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(tilrettelegging_s_17_fct_cat_plot_html_1)
+```
+
+_I hvilken grad ble det tilrettelagt for videreutdanningen ved at andre avlastet deg for noen av dine oppgaver..._. `{r} x`.
+
+:::
+
+
+## I hvilken grad ble...{#sec-I-hvilken-grad-ble--35}
+
+
+::: {#fig-tilrettelegging-s-17-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=3, n_cats_y=5, max_chars_cats_y=18, multiplier_per_plot=0.6)}
+tilrettelegging_s_17_fct_cat_plot_html <-
+	data_1_Tilrettelegg |>
+		makeme(dep = c(s_17_1,s_17_2,s_17_5),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(tilrettelegging_s_17_fct_cat_plot_html[[1]]))
+link <- make_link(data = tilrettelegging_s_17_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = tilrettelegging_s_17_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(tilrettelegging_s_17_fct_cat_plot_html)
+```
+
+_I hvilken grad ble..._. `{r} x`.
+
+:::
+
+
+## I hvilken grad har du fått dekket økonomiske utgifter i forbindelse med videreutdanningen?{#sec-I-hvilken-grad-har-du-fatt-dekket-okonomiske-utgifter-i-forbindelse-med-videreutdanningen--97}
+
+
+::: {#fig-tilrettelegging-s-15-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=30, multiplier_per_plot=0.1)}
+tilrettelegging_s_15_fct_cat_plot_html <-
+	data_1_Tilrettelegg |>
+		makeme(dep = c(s_15),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(tilrettelegging_s_15_fct_cat_plot_html[[1]]))
+link <- make_link(data = tilrettelegging_s_15_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = tilrettelegging_s_15_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(tilrettelegging_s_15_fct_cat_plot_html)
+```
+
+_I hvilken grad har du fått dekket økonomiske utgifter i forbindelse med videreutdanningen?_. `{r} x`.
+
+:::
+
+
+## I hvilken grad mener du utgiftsdekningen har vært tilstrekkelig?{#sec-I-hvilken-grad-mener-du-utgiftsdekningen-har-vart-tilstrekkelig--27}
+
+
+::: {#fig-tilrettelegging-s-16-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=30, multiplier_per_plot=0.2)}
+tilrettelegging_s_16_fct_cat_plot_html <-
+	data_1_Tilrettelegg |>
+		makeme(dep = c(s_16),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(tilrettelegging_s_16_fct_cat_plot_html[[1]]))
+link <- make_link(data = tilrettelegging_s_16_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = tilrettelegging_s_16_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(tilrettelegging_s_16_fct_cat_plot_html)
+```
+
+_I hvilken grad mener du utgiftsdekningen har vært tilstrekkelig?_. `{r} x`.
+
+:::
+
+
+## På en skala fra 1 (Ikke i det hele tatt) til 6 (Bidro sterkt), vennligst gi din oppfatning av om tilretteleggingen påvirket utbyttet fra videreutdanningen?{#sec-Pa-en-skala-fra-1-Ikke-i-det-hele-tatt-til-6-Bidro-sterkt-vennligst-gi-din-oppfatning-av-om-tilretteleggingen-pavirket-utbyttet-fra-videreutdanningen--76}
+
+
+::: {#fig-tilrettelegging-s-23-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=6, max_chars_cats_y=24, multiplier_per_plot=0.2)}
+tilrettelegging_s_23_fct_cat_plot_html <-
+	data_1_Tilrettelegg |>
+		makeme(dep = c(s_23),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(tilrettelegging_s_23_fct_cat_plot_html[[1]]))
+link <- make_link(data = tilrettelegging_s_23_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = tilrettelegging_s_23_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(tilrettelegging_s_23_fct_cat_plot_html)
+```
+
+_På en skala fra 1 (Ikke i det hele tatt) til 6 (Bidro sterkt), vennligst gi din oppfatning av om tilretteleggingen påvirket utbyttet fra videreutdanningen?_. `{r} x`.
+
+:::
+
+
+## På en skala fra 1 (Ikke i det hele tatt) til 6 (Hindret sterkt), vennligst gi din oppfatning av om mangelen på tilrettelegging påvirket utbyttet fra videreutdanningen?{#sec-Pa-en-skala-fra-1-Ikke-i-det-hele-tatt-til-6-Hindret-sterkt-vennligst-gi-din-oppfatning-av-om-mangelen-pa-tilrettelegging-pavirket-utbyttet-fra-videreutdanningen--09}
+
+
+::: {#fig-tilrettelegging-s-19-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=6, max_chars_cats_y=24, multiplier_per_plot=0.2)}
+tilrettelegging_s_19_fct_cat_plot_html <-
+	data_1_Tilrettelegg |>
+		makeme(dep = c(s_19),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(tilrettelegging_s_19_fct_cat_plot_html[[1]]))
+link <- make_link(data = tilrettelegging_s_19_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = tilrettelegging_s_19_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(tilrettelegging_s_19_fct_cat_plot_html)
+```
+
+_På en skala fra 1 (Ikke i det hele tatt) til 6 (Hindret sterkt), vennligst gi din oppfatning av om mangelen på tilrettelegging påvirket utbyttet fra videreutdanningen?_. `{r} x`.
+
+:::
+
+
+## På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av kunnskapsdeling i barnehagen du jobber{#sec-Pa-en-skala-fra-1-helt-uenig-til-6-helt-enig-vennligst-gi-din-oppfatning-av-kunnskapsdeling-i-barnehagen-du-jobber-20}
+
+
+::: {#fig-tilrettelegging-s-2-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=5, n_cats_y=6, max_chars_cats_y=14, multiplier_per_plot=6)}
+tilrettelegging_s_2_fct_cat_plot_html <-
+	data_1_Tilrettelegg |>
+		makeme(dep = c(s_22_1,s_22_2,s_22_3,s_22_4,s_22_5),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(tilrettelegging_s_2_fct_cat_plot_html[[1]]))
+link <- make_link(data = tilrettelegging_s_2_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = tilrettelegging_s_2_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(tilrettelegging_s_2_fct_cat_plot_html)
+```
+
+_På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av kunnskapsdeling i barnehagen du jobber_. `{r} x`.
+
+:::
+
+
+## Samlet sett, opplever du at det har vært manglende tilrettelegging for å studere på din arbeidsplass?{#sec-Samlet-sett-opplever-du-at-det-har-vart-manglende-tilrettelegging-for-a-studere-pa-din-arbeidsplass--12}
+
+
+::: {#fig-tilrettelegging-s-22-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=2, max_chars_cats_y=3, multiplier_per_plot=0.6)}
+tilrettelegging_s_22_fct_cat_plot_html <-
+	data_1_Tilrettelegg |>
+		makeme(dep = c(s_22),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(tilrettelegging_s_22_fct_cat_plot_html[[1]]))
+link <- make_link(data = tilrettelegging_s_22_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = tilrettelegging_s_22_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(tilrettelegging_s_22_fct_cat_plot_html)
+```
+
+_Samlet sett, opplever du at det har vært manglende tilrettelegging for å studere på din arbeidsplass?_. `{r} x`.
+
+:::

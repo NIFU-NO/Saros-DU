@@ -1,0 +1,313 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 2.0
+title: Gjennomføring
+---
+# Gjennomføring av studiet
+```{r}
+#| label: 'Import data for 3_Gjennomforin'
+data_3_Gjennomforin <- qs::qread('../3_Gjennomforin/data_3_Gjennomforin.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+## Dersom det er andre deler ved studiet som har vært viktig for ditt læringsutbytte, kan du skrive det her:{#sec-Dersom-det-er-andre-deler-ved-studiet-som-har-vart-viktig-for-ditt-laringsutbytte-kan-du-skrive-det-her--45}
+
+
+::: {#tbl-gjennomforing-av-studiet-q9-12-chr-chr-table-target}
+
+```{r}
+table <-
+	makeme(data = data_3_Gjennomforin,
+		dep = c(Q9.12),
+		type = 'chr_table_html',
+		crowd='target',
+		mesos_var = params$mesos_var,
+		mesos_group = params$mesos_group)
+gt(table[[1]])
+```
+
+_Dersom det er andre deler ved studiet som har vært viktig for ditt læringsutbytte, kan du skrive det her:_ for `{r} params$mesos_group`.
+
+:::
+
+
+## Har deler av utdanningen foregått digitalt?{#sec-Har-deler-av-utdanningen-foregatt-digitalt--16}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-gjennomforing-av-studiet-q9-2-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=2, max_chars_cats_y=3, multiplier_per_plot=.5)
+plot <-
+	makeme(data = data_3_Gjennomforin,
+	dep = c(Q9.2),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-gjennomforing-av-studiet-q9-2-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=2, max_chars_cats_y=3, multiplier_per_plot=.5)
+plot <-
+	makeme(data = data_3_Gjennomforin,
+	dep = c(Q9.2),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Har deler av utdanningen foregått digitalt?_ by __
+
+:::
+
+
+## Hva var temaet for utviklingsarbeidet ditt, og hvordan påvirket det ditt læringsutbytte?{#sec-Hva-var-temaet-for-utviklingsarbeidet-ditt-og-hvordan-pavirket-det-ditt-laringsutbytte--60}
+
+
+::: {#tbl-gjennomforing-av-studiet-q9-11-chr-chr-table-target}
+
+```{r}
+table <-
+	makeme(data = data_3_Gjennomforin,
+		dep = c(Q9.11),
+		type = 'chr_table_html',
+		crowd='target',
+		mesos_var = params$mesos_var,
+		mesos_group = params$mesos_group)
+gt(table[[1]])
+```
+
+_Hva var temaet for utviklingsarbeidet ditt, og hvordan påvirket det ditt læringsutbytte?_ for `{r} params$mesos_group`.
+
+:::
+
+
+## Hvor viktig mener du ulike læringsaktiviteter i lederutdanningen har vært for ditt læringsutbytte?{#sec-Hvor-viktig-mener-du-ulike-laringsaktiviteter-i-lederutdanningen-har-vart-for-ditt-laringsutbytte--00}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-gjennomforing-av-studiet-q9-10-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=13, n_cats_y=5, max_chars_cats_y=13, multiplier_per_plot=9)
+plot <-
+	makeme(data = data_3_Gjennomforin,
+	dep = c(Q9.10_1,Q9.10_2,Q9.10_3,Q9.10_4,Q9.10_5,Q9.10_6,Q9.10_7,Q9.10_8,Q9.10_9,Q9.10_10,Q9.10_11,Q9.10_12,Q9.10_13),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-gjennomforing-av-studiet-q9-10-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=13, n_cats_y=5, max_chars_cats_y=13, multiplier_per_plot=9)
+plot <-
+	makeme(data = data_3_Gjennomforin,
+	dep = c(Q9.10_1,Q9.10_2,Q9.10_3,Q9.10_4,Q9.10_5,Q9.10_6,Q9.10_7,Q9.10_8,Q9.10_9,Q9.10_10,Q9.10_11,Q9.10_12,Q9.10_13),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Hvor viktig mener du ulike læringsaktiviteter i lederutdanningen har vært for ditt læringsutbytte?_ by __
+
+:::
+
+
+## Hvordan har du jobbet med studiet mellom samlingene?{#sec-Hvordan-har-du-jobbet-med-studiet-mellom-samlingene--59}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-gjennomforing-av-studiet-q9-7-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=11, n_cats_y=5, max_chars_cats_y=18, multiplier_per_plot=9)
+plot <-
+	makeme(data = data_3_Gjennomforin,
+	dep = c(Q9.7_1,Q9.7_2,Q9.7_3,Q9.7_4,Q9.7_5,Q9.7_6,Q9.7_7,Q9.7_8,Q9.7_9,Q9.7_10,Q9.7_11),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-gjennomforing-av-studiet-q9-7-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=11, n_cats_y=5, max_chars_cats_y=18, multiplier_per_plot=9)
+plot <-
+	makeme(data = data_3_Gjennomforin,
+	dep = c(Q9.7_1,Q9.7_2,Q9.7_3,Q9.7_4,Q9.7_5,Q9.7_6,Q9.7_7,Q9.7_8,Q9.7_9,Q9.7_10,Q9.7_11),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Hvordan har du jobbet med studiet mellom samlingene?_ by __
+
+:::
+
+
+## I hvilken grad var lederutdanningen basert på følgende læringsaktiviteter?{#sec-I-hvilken-grad-var-lederutdanningen-basert-pa-folgende-laringsaktiviteter--83}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-gjennomforing-av-studiet-q9-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=13, n_cats_y=5, max_chars_cats_y=28)
+plot <-
+	makeme(data = data_3_Gjennomforin,
+	dep = c(Q9.9_1,Q9.9_2,Q9.9_3,Q9.9_4,Q9.9_5,Q9.9_6,Q9.9_7,Q9.9_8,Q9.9_9,Q9.9_10,Q9.9_11,Q9.9_12,Q9.9_13),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-gjennomforing-av-studiet-q9-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=13, n_cats_y=5, max_chars_cats_y=28)
+plot <-
+	makeme(data = data_3_Gjennomforin,
+	dep = c(Q9.9_1,Q9.9_2,Q9.9_3,Q9.9_4,Q9.9_5,Q9.9_6,Q9.9_7,Q9.9_8,Q9.9_9,Q9.9_10,Q9.9_11,Q9.9_12,Q9.9_13),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_I hvilken grad var lederutdanningen basert på følgende læringsaktiviteter?_ by __
+
+:::

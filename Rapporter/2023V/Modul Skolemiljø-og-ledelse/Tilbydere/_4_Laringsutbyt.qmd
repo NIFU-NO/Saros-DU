@@ -1,0 +1,507 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 3.0
+
+---
+# Læringsutbytte
+```{r}
+#| label: 'Import data for 4_Laringsutbyt'
+data_4_Laringsutbyt <- qs::qread('../4_Laringsutbyt/data_4_Laringsutbyt.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+## Hvor viktig mener du ulike læringsaktiviteter i lederutdanningen har vært for ditt læringsutbytte? Dersom du ikke har hatt det som inngår i spørsmålet, kan du krysse av for "Ikke hatt".{#sec-Hvor-viktig-mener-du-ulike-laringsaktiviteter-i-lederutdanningen-har-vart-for-ditt-laringsutbytte-Dersom-du-ikke-har-hatt-det-som-inngar-i-sporsmalet-kan-du-krysse-av-for-Ikke-hatt--63}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-laringsutbytte-s-56-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=14, n_cats_y=6, max_chars_cats_y=13)
+plot <-
+	makeme(data = data_4_Laringsutbyt,
+	dep = c(s_56_27,s_56_1,s_56_2,s_56_3,s_56_4,s_56_5,s_56_6,s_56_7,s_56_8,s_56_9,s_56_10,s_56_11,s_56_12,s_56_13),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-laringsutbytte-s-56-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=14, n_cats_y=6, max_chars_cats_y=13)
+plot <-
+	makeme(data = data_4_Laringsutbyt,
+	dep = c(s_56_27,s_56_1,s_56_2,s_56_3,s_56_4,s_56_5,s_56_6,s_56_7,s_56_8,s_56_9,s_56_10,s_56_11,s_56_12,s_56_13),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Hvor viktig mener du ulike læringsaktiviteter i lederutdanningen har vært for ditt læringsutbytte? Dersom du ikke har hatt det som inngår i spørsmålet, kan du krysse av for "Ikke hatt"._ by __
+
+:::
+
+
+## Hvordan vurderer du utbyttet av følgende samlinger?{#sec-Hvordan-vurderer-du-utbyttet-av-folgende-samlinger--20}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-laringsutbytte-s-36-1-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=4, max_chars_cats_y=12)
+plot <-
+	makeme(data = data_4_Laringsutbyt,
+	dep = c(s_36_1),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-laringsutbytte-s-36-1-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=4, max_chars_cats_y=12)
+plot <-
+	makeme(data = data_4_Laringsutbyt,
+	dep = c(s_36_1),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Hvordan vurderer du utbyttet av følgende samlinger?_ by __
+
+:::
+
+
+## I hvilken grad er du fornøyd med utdanningen som helhet?{#sec-I-hvilken-grad-er-du-fornoyd-med-utdanningen-som-helhet--57}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-laringsutbytte-s-84-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_4_Laringsutbyt,
+	dep = c(s_84),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-laringsutbytte-s-84-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_4_Laringsutbyt,
+	dep = c(s_84),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_I hvilken grad er du fornøyd med utdanningen som helhet?_ by __
+
+:::
+
+
+## I hvilken grad stemmer disse utsagnene?{#sec-I-hvilken-grad-stemmer-disse-utsagnene--04}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-laringsutbytte-s-40-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=4, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_4_Laringsutbyt,
+	dep = c(s_40_1,s_40_4,s_40_5,s_40_6),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-laringsutbytte-s-40-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=4, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_4_Laringsutbyt,
+	dep = c(s_40_1,s_40_4,s_40_5,s_40_6),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_I hvilken grad stemmer disse utsagnene?_ by __
+
+:::
+
+
+## Lederutdanningen har gitt meg kompetanse til å: forebygge mobbing og andre krenkelser{#sec-Lederutdanningen-har-gitt-meg-kompetanse-til-a-forebygge-mobbing-og-andre-krenkelser-97}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-laringsutbytte-s-69-2-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=6, max_chars_cats_y=14)
+plot <-
+	makeme(data = data_4_Laringsutbyt,
+	dep = c(s_69_2),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-laringsutbytte-s-69-2-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=6, max_chars_cats_y=14)
+plot <-
+	makeme(data = data_4_Laringsutbyt,
+	dep = c(s_69_2),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Lederutdanningen har gitt meg kompetanse til å: forebygge mobbing og andre krenkelser_ by __
+
+:::
+
+
+## Lederutdanningen har gitt meg kompetanse til å: håndtere mobbing og andre krenkelser{#sec-Lederutdanningen-har-gitt-meg-kompetanse-til-a-handtere-mobbing-og-andre-krenkelser-21}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-laringsutbytte-s-69-3-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=6, max_chars_cats_y=14)
+plot <-
+	makeme(data = data_4_Laringsutbyt,
+	dep = c(s_69_3),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-laringsutbytte-s-69-3-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=6, max_chars_cats_y=14)
+plot <-
+	makeme(data = data_4_Laringsutbyt,
+	dep = c(s_69_3),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Lederutdanningen har gitt meg kompetanse til å: håndtere mobbing og andre krenkelser_ by __
+
+:::
+
+
+## Lederutdanningen har gitt meg kompetanse til å: skape et trygt og godt skolemiljø{#sec-Lederutdanningen-har-gitt-meg-kompetanse-til-a-skape-et-trygt-og-godt-skolemiljo-14}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-laringsutbytte-s-69-1-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=6, max_chars_cats_y=14)
+plot <-
+	makeme(data = data_4_Laringsutbyt,
+	dep = c(s_69_1),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-laringsutbytte-s-69-1-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=6, max_chars_cats_y=14)
+plot <-
+	makeme(data = data_4_Laringsutbyt,
+	dep = c(s_69_1),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Lederutdanningen har gitt meg kompetanse til å: skape et trygt og godt skolemiljø_ by __
+
+:::
+
+
+## På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av læringsutbyttet av lederutdanningen{#sec-Pa-en-skala-fra-1-helt-uenig-til-6-helt-enig-vennligst-gi-din-oppfatning-av-laringsutbyttet-av-lederutdanningen-10}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-laringsutbytte-s-81-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=9, n_cats_y=6, max_chars_cats_y=14)
+plot <-
+	makeme(data = data_4_Laringsutbyt,
+	dep = c(s_81_1,s_81_2,s_81_3,s_81_4,s_81_5,s_81_6,s_81_7,s_81_8,s_81_9),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-laringsutbytte-s-81-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=9, n_cats_y=6, max_chars_cats_y=14)
+plot <-
+	makeme(data = data_4_Laringsutbyt,
+	dep = c(s_81_1,s_81_2,s_81_3,s_81_4,s_81_5,s_81_6,s_81_7,s_81_8,s_81_9),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av læringsutbyttet av lederutdanningen_ by __
+
+:::

@@ -1,0 +1,371 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 4.0
+
+---
+# Svarprosent og deltakere
+```{r}
+#| label: 'Import data for 5_Svarprosent_'
+data_5_Svarprosent_ <- qs::qread('5_Svarprosent_/data_5_Svarprosent_.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+## Hadde du lederutdanning før du begynte på din nåværende lederutdanning?{#sec-Hadde-du-lederutdanning-for-du-begynte-pa-din-navarende-lederutdanning--13}
+
+
+::: {#fig-svarprosent-og-deltakere-q4-6-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=3, max_chars_cats_y=99, multiplier_per_plot=0.2)}
+svarprosent_og_deltakere_q4_6_fct_cat_plot_html <-
+	data_5_Svarprosent_ |>
+		makeme(dep = c(Q4.6),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(svarprosent_og_deltakere_q4_6_fct_cat_plot_html[[1]]))
+link <- make_link(data = svarprosent_og_deltakere_q4_6_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = svarprosent_og_deltakere_q4_6_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(svarprosent_og_deltakere_q4_6_fct_cat_plot_html)
+```
+
+_Hadde du lederutdanning før du begynte på din nåværende lederutdanning?_. `{r} x`.
+
+:::
+
+
+## Hva er din situasjon nå?{#sec-Hva-er-din-situasjon-na--95}
+
+
+::: {#fig-svarprosent-og-deltakere-q2-6-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=44, multiplier_per_plot=0.1)}
+svarprosent_og_deltakere_q2_6_fct_cat_plot_html <-
+	data_5_Svarprosent_ |>
+		makeme(dep = c(Q2.6),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(svarprosent_og_deltakere_q2_6_fct_cat_plot_html[[1]]))
+link <- make_link(data = svarprosent_og_deltakere_q2_6_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = svarprosent_og_deltakere_q2_6_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(svarprosent_og_deltakere_q2_6_fct_cat_plot_html)
+```
+
+_Hva er din situasjon nå?_. `{r} x`.
+
+:::
+
+
+## Hva er din stilling ved barnehagen?{#sec-Hva-er-din-stilling-ved-barnehagen--08}
+
+
+::: {#fig-svarprosent-og-deltakere-q3-4-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=3, max_chars_cats_y=19, multiplier_per_plot=0.3)}
+svarprosent_og_deltakere_q3_4_fct_cat_plot_html <-
+	data_5_Svarprosent_ |>
+		makeme(dep = c(Q3.4),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(svarprosent_og_deltakere_q3_4_fct_cat_plot_html[[1]]))
+link <- make_link(data = svarprosent_og_deltakere_q3_4_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = svarprosent_og_deltakere_q3_4_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(svarprosent_og_deltakere_q3_4_fct_cat_plot_html)
+```
+
+_Hva er din stilling ved barnehagen?_. `{r} x`.
+
+:::
+
+
+## Hva er din stilling ved skolen?{#sec-Hva-er-din-stilling-ved-skolen--65}
+
+
+::: {#fig-svarprosent-og-deltakere-q3-3-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=19, multiplier_per_plot=0.2)}
+svarprosent_og_deltakere_q3_3_fct_cat_plot_html <-
+	data_5_Svarprosent_ |>
+		makeme(dep = c(Q3.3),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(svarprosent_og_deltakere_q3_3_fct_cat_plot_html[[1]]))
+link <- make_link(data = svarprosent_og_deltakere_q3_3_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = svarprosent_og_deltakere_q3_3_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(svarprosent_og_deltakere_q3_3_fct_cat_plot_html)
+```
+
+_Hva er din stilling ved skolen?_. `{r} x`.
+
+:::
+
+
+## Hva slags barnehage jobber du ved?{#sec-Hva-slags-barnehage-jobber-du-ved--03}
+
+
+::: {#fig-svarprosent-og-deltakere-q4-11-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=3, max_chars_cats_y=7, multiplier_per_plot=0.5)}
+svarprosent_og_deltakere_q4_11_fct_cat_plot_html <-
+	data_5_Svarprosent_ |>
+		makeme(dep = c(Q4.11),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(svarprosent_og_deltakere_q4_11_fct_cat_plot_html[[1]]))
+link <- make_link(data = svarprosent_og_deltakere_q4_11_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = svarprosent_og_deltakere_q4_11_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(svarprosent_og_deltakere_q4_11_fct_cat_plot_html)
+```
+
+_Hva slags barnehage jobber du ved?_. `{r} x`.
+
+:::
+
+
+## Hva slags eierform har barnehagen du jobber ved?{#sec-Hva-slags-eierform-har-barnehagen-du-jobber-ved--22}
+
+
+::: {#fig-svarprosent-og-deltakere-q4-10-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=3, max_chars_cats_y=8, multiplier_per_plot=0.5)}
+svarprosent_og_deltakere_q4_10_fct_cat_plot_html <-
+	data_5_Svarprosent_ |>
+		makeme(dep = c(Q4.10),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(svarprosent_og_deltakere_q4_10_fct_cat_plot_html[[1]]))
+link <- make_link(data = svarprosent_og_deltakere_q4_10_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = svarprosent_og_deltakere_q4_10_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(svarprosent_og_deltakere_q4_10_fct_cat_plot_html)
+```
+
+_Hva slags eierform har barnehagen du jobber ved?_. `{r} x`.
+
+:::
+
+
+## Hvilket fylke bor du i?{#sec-Hvilket-fylke-bor-du-i--46}
+
+
+::: {#fig-svarprosent-og-deltakere-q4-7-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=15, max_chars_cats_y=15, multiplier_per_plot=0.05)}
+svarprosent_og_deltakere_q4_7_fct_cat_plot_html <-
+	data_5_Svarprosent_ |>
+		makeme(dep = c(Q4.7),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(svarprosent_og_deltakere_q4_7_fct_cat_plot_html[[1]]))
+link <- make_link(data = svarprosent_og_deltakere_q4_7_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = svarprosent_og_deltakere_q4_7_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(svarprosent_og_deltakere_q4_7_fct_cat_plot_html)
+```
+
+_Hvilket fylke bor du i?_. `{r} x`.
+
+:::
+
+
+## Hvilket skoleslag jobber du ved dette året?{#sec-Hvilket-skoleslag-jobber-du-ved-dette-aret--20}
+
+
+::: {#fig-svarprosent-og-deltakere-q4-9-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=12, multiplier_per_plot=0.3)}
+svarprosent_og_deltakere_q4_9_fct_cat_plot_html <-
+	data_5_Svarprosent_ |>
+		makeme(dep = c(Q4.9),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(svarprosent_og_deltakere_q4_9_fct_cat_plot_html[[1]]))
+link <- make_link(data = svarprosent_og_deltakere_q4_9_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = svarprosent_og_deltakere_q4_9_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(svarprosent_og_deltakere_q4_9_fct_cat_plot_html)
+```
+
+_Hvilket skoleslag jobber du ved dette året?_. `{r} x`.
+
+:::
+
+
+## Hvor er du leder?{#sec-Hvor-er-du-leder--06}
+
+
+::: {#fig-svarprosent-og-deltakere-q3-2-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=2, max_chars_cats_y=9, multiplier_per_plot=0.5)}
+svarprosent_og_deltakere_q3_2_fct_cat_plot_html <-
+	data_5_Svarprosent_ |>
+		makeme(dep = c(Q3.2),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(svarprosent_og_deltakere_q3_2_fct_cat_plot_html[[1]]))
+link <- make_link(data = svarprosent_og_deltakere_q3_2_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = svarprosent_og_deltakere_q3_2_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(svarprosent_og_deltakere_q3_2_fct_cat_plot_html)
+```
+
+_Hvor er du leder?_. `{r} x`.
+
+:::
+
+
+## Hvor lang utdanning har du? (Ikke regn med eventuell utdanning du har fått i løpet av studieåret 2023/2024).{#sec-Hvor-lang-utdanning-har-du-Ikke-regn-med-eventuell-utdanning-du-har-fatt-i-lopet-av-studiearet-2023-2024--56}
+
+
+::: {#fig-svarprosent-og-deltakere-q4-5-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=2, max_chars_cats_y=29, multiplier_per_plot=0.3)}
+svarprosent_og_deltakere_q4_5_fct_cat_plot_html <-
+	data_5_Svarprosent_ |>
+		makeme(dep = c(Q4.5),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(svarprosent_og_deltakere_q4_5_fct_cat_plot_html[[1]]))
+link <- make_link(data = svarprosent_og_deltakere_q4_5_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = svarprosent_og_deltakere_q4_5_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(svarprosent_og_deltakere_q4_5_fct_cat_plot_html)
+```
+
+_Hvor lang utdanning har du? (Ikke regn med eventuell utdanning du har fått i løpet av studieåret 2023/2024)._. `{r} x`.
+
+:::
+
+
+## Hvor mange innbyggere er det i kommunen du jobber i?{#sec-Hvor-mange-innbyggere-er-det-i-kommunen-du-jobber-i--80}
+
+
+::: {#fig-svarprosent-og-deltakere-q4-12-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=4, max_chars_cats_y=13, multiplier_per_plot=0.3)}
+svarprosent_og_deltakere_q4_12_fct_cat_plot_html <-
+	data_5_Svarprosent_ |>
+		makeme(dep = c(Q4.12),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(svarprosent_og_deltakere_q4_12_fct_cat_plot_html[[1]]))
+link <- make_link(data = svarprosent_og_deltakere_q4_12_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = svarprosent_og_deltakere_q4_12_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(svarprosent_og_deltakere_q4_12_fct_cat_plot_html)
+```
+
+_Hvor mange innbyggere er det i kommunen du jobber i?_. `{r} x`.
+
+:::
+
+
+## Kjønn{#sec-Kjonn-34}
+
+
+::: {#fig-svarprosent-og-deltakere-q4-2-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=2, max_chars_cats_y=6, multiplier_per_plot=0.5)}
+svarprosent_og_deltakere_q4_2_fct_cat_plot_html <-
+	data_5_Svarprosent_ |>
+		makeme(dep = c(Q4.2),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(svarprosent_og_deltakere_q4_2_fct_cat_plot_html[[1]]))
+link <- make_link(data = svarprosent_og_deltakere_q4_2_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = svarprosent_og_deltakere_q4_2_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(svarprosent_og_deltakere_q4_2_fct_cat_plot_html)
+```
+
+_Kjønn_. `{r} x`.
+
+:::
+
+
+## Stemmer det at du fikk tilbud om å ta [Field-studieprogram] ved [Field-studiested]? Dette gjelder uavhengig av om du fullførte utdanningen eller ikke.{#sec-Stemmer-det-at-du-fikk-tilbud-om-a-ta-Field-studieprogram-ved-Field-studiested-Dette-gjelder-uavhengig-av-om-du-fullforte-utdanningen-eller-ikke--30}
+
+
+::: {#fig-svarprosent-og-deltakere-q2-2-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=2, max_chars_cats_y=3, multiplier_per_plot=0.5)}
+svarprosent_og_deltakere_q2_2_fct_cat_plot_html <-
+	data_5_Svarprosent_ |>
+		makeme(dep = c(Q2.2),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(svarprosent_og_deltakere_q2_2_fct_cat_plot_html[[1]]))
+link <- make_link(data = svarprosent_og_deltakere_q2_2_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = svarprosent_og_deltakere_q2_2_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(svarprosent_og_deltakere_q2_2_fct_cat_plot_html)
+```
+
+_Stemmer det at du fikk tilbud om å ta [Field-studieprogram] ved [Field-studiested]? Dette gjelder uavhengig av om du fullførte utdanningen eller ikke._. `{r} x`.
+
+:::
+
+
+## Svarprosent{#sec-Svarprosent-79}
+
+
+::: {#fig-svarprosent-og-deltakere-svarprosent-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=2, max_chars_cats_y=10, multiplier_per_plot=0.5)}
+svarprosent_og_deltakere_svarprosent_fct_cat_plot_html <-
+	data_5_Svarprosent_ |>
+		makeme(dep = c(svarprosent),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(svarprosent_og_deltakere_svarprosent_fct_cat_plot_html[[1]]))
+link <- make_link(data = svarprosent_og_deltakere_svarprosent_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = svarprosent_og_deltakere_svarprosent_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(svarprosent_og_deltakere_svarprosent_fct_cat_plot_html)
+```
+
+_Svarprosent_. `{r} x`.
+
+:::

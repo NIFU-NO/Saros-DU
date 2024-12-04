@@ -1,0 +1,34 @@
+---
+title: Yrkesfaglærer
+date: '2024-11-22'
+date-format: DD.MM.YYYY
+abstract: ''
+preface: ''
+figure_table: true
+table_table: true
+execute:
+  echo: false
+  warning: false
+fig-dpi: 900
+df-print: kable
+sidebar: false
+lang: nb
+format:
+  nifu_pub-typst: default
+  nifudocx-docx:
+    number-sections: false
+params:
+  mesos_var: campus2
+  mesos_group: ~
+
+---
+
+
+```{r}
+#| results: asis
+fs::dir_ls(path = ".", regexp = "\\.qmd", recurse = FALSE, type = "file") |>
+  grep(x=_, pattern = "index\\.qmd|report\\.qmd|/_|_arkiv", value=TRUE, invert=TRUE) |>
+  lapply(X=_, FUN = function(x) knitr::knit_child(x, quiet=TRUE)) |>
+  unlist() |>
+  cat(sep = "\\n")
+```

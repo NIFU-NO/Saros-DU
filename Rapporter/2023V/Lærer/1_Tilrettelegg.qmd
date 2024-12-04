@@ -1,0 +1,179 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 0.0
+
+---
+# Tilrettelegging
+```{r}
+#| label: 'Import data for 1_Tilrettelegg'
+data_1_Tilrettelegg <- qs::qread('1_Tilrettelegg/data_1_Tilrettelegg.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+## Hva var viktige og mindre viktige grunner til at du bestemte deg for å søke om videreutdanning? Dersom en grunn var særlig viktig for deg er det naturlig at den gis en høyere verdi enn de andre.{#sec-Hva-var-viktige-og-mindre-viktige-grunner-til-at-du-bestemte-deg-for-a-soke-om-videreutdanning-Dersom-en-grunn-var-sarlig-viktig-for-deg-er-det-naturlig-at-den-gis-en-hoyere-verdi-enn-de-andre--23}
+
+
+::: {#fig-tilrettelegging-s-12-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=11, n_cats_y=7, max_chars_cats_y=17)}
+tilrettelegging_s_12_fct_cat_plot_html <-
+	data_1_Tilrettelegg |>
+		makeme(dep = c(s_12_1,s_12_2,s_12_3,s_12_4,s_12_5,s_12_6,s_12_7,s_12_8,s_12_11,s_12_12,s_12_13),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(tilrettelegging_s_12_fct_cat_plot_html[[1]]))
+link <- make_link(data = tilrettelegging_s_12_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = tilrettelegging_s_12_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(tilrettelegging_s_12_fct_cat_plot_html)
+```
+
+_Hva var viktige og mindre viktige grunner til at du bestemte deg for å søke om videreutdanning? Dersom en grunn var særlig viktig for deg er det naturlig at den gis en høyere verdi enn de andre._. `{r} x`.
+
+:::
+
+
+## Hvordan vurderer du det å kombinere{#sec-Hvordan-vurderer-du-det-a-kombinere-53}
+
+
+::: {#fig-tilrettelegging-s-12-fct-cat-plot-html-1}
+
+```{r, fig.height = fig_height_h_barchart(n_y=2, n_cats_y=5, max_chars_cats_y=26, multiplier_per_plot=0.1)}
+tilrettelegging_s_12_fct_cat_plot_html_1 <-
+	data_1_Tilrettelegg |>
+		makeme(dep = c(s_12_9,s_12_10),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(tilrettelegging_s_12_fct_cat_plot_html_1[[1]]))
+link <- make_link(data = tilrettelegging_s_12_fct_cat_plot_html_1[[1]]$data)
+link_plot <- make_link(data = tilrettelegging_s_12_fct_cat_plot_html_1,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(tilrettelegging_s_12_fct_cat_plot_html_1)
+```
+
+_Hvordan vurderer du det å kombinere_. `{r} x`.
+
+:::
+
+
+## På en skala fra 1 (Ikke i det hele tatt) til 6 (Bidro sterkt), vennligst gi din oppfatning av om mangelen på tilrettelegging påvirket utbyttet fra videreutdanningen?{#sec-Pa-en-skala-fra-1-Ikke-i-det-hele-tatt-til-6-Bidro-sterkt-vennligst-gi-din-oppfatning-av-om-mangelen-pa-tilrettelegging-pavirket-utbyttet-fra-videreutdanningen--23}
+
+
+::: {#fig-tilrettelegging-s-27-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=6, max_chars_cats_y=24, multiplier_per_plot=0.1)}
+tilrettelegging_s_27_fct_cat_plot_html <-
+	data_1_Tilrettelegg |>
+		makeme(dep = c(s_27),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(tilrettelegging_s_27_fct_cat_plot_html[[1]]))
+link <- make_link(data = tilrettelegging_s_27_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = tilrettelegging_s_27_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(tilrettelegging_s_27_fct_cat_plot_html)
+```
+
+_På en skala fra 1 (Ikke i det hele tatt) til 6 (Bidro sterkt), vennligst gi din oppfatning av om mangelen på tilrettelegging påvirket utbyttet fra videreutdanningen?_. `{r} x`.
+
+:::
+
+
+## På en skala fra 1 (Ikke i det hele tatt) til 6 (Hindret sterkt), vennligst gi din oppfatning av om mangelen på tilrettelegging påvirket utbyttet fra videreutdanningen?{#sec-Pa-en-skala-fra-1-Ikke-i-det-hele-tatt-til-6-Hindret-sterkt-vennligst-gi-din-oppfatning-av-om-mangelen-pa-tilrettelegging-pavirket-utbyttet-fra-videreutdanningen--47}
+
+
+::: {#fig-tilrettelegging-s-23-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=6, max_chars_cats_y=24, multiplier_per_plot=0.1)}
+tilrettelegging_s_23_fct_cat_plot_html <-
+	data_1_Tilrettelegg |>
+		makeme(dep = c(s_23),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(tilrettelegging_s_23_fct_cat_plot_html[[1]]))
+link <- make_link(data = tilrettelegging_s_23_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = tilrettelegging_s_23_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(tilrettelegging_s_23_fct_cat_plot_html)
+```
+
+_På en skala fra 1 (Ikke i det hele tatt) til 6 (Hindret sterkt), vennligst gi din oppfatning av om mangelen på tilrettelegging påvirket utbyttet fra videreutdanningen?_. `{r} x`.
+
+:::
+
+
+## På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av kunnskapsdeling på skolen.{#sec-Pa-en-skala-fra-1-helt-uenig-til-6-helt-enig-vennligst-gi-din-oppfatning-av-kunnskapsdeling-pa-skolen--07}
+
+
+::: {#fig-tilrettelegging-s-24-fct-cat-plot-html-1}
+
+```{r, fig.height = fig_height_h_barchart(n_y=5, n_cats_y=6, max_chars_cats_y=14, multiplier_per_plot=6)}
+tilrettelegging_s_24_fct_cat_plot_html_1 <-
+	data_1_Tilrettelegg |>
+		makeme(dep = c(s_24_1,s_24_2,s_24_3,s_24_4,s_24_5),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(tilrettelegging_s_24_fct_cat_plot_html_1[[1]]))
+link <- make_link(data = tilrettelegging_s_24_fct_cat_plot_html_1[[1]]$data)
+link_plot <- make_link(data = tilrettelegging_s_24_fct_cat_plot_html_1,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(tilrettelegging_s_24_fct_cat_plot_html_1)
+```
+
+_På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av kunnskapsdeling på skolen._. `{r} x`.
+
+:::
+
+
+## Samlet sett, opplever du at det har vært manglende tilrettelegging for å ta videreutdanning på din arbeidsplass?{#sec-Samlet-sett-opplever-du-at-det-har-vart-manglende-tilrettelegging-for-a-ta-videreutdanning-pa-din-arbeidsplass--45}
+
+
+::: {#fig-tilrettelegging-s-24-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=2, max_chars_cats_y=3, multiplier_per_plot=0.7)}
+tilrettelegging_s_24_fct_cat_plot_html <-
+	data_1_Tilrettelegg |>
+		makeme(dep = c(s_24),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(tilrettelegging_s_24_fct_cat_plot_html[[1]]))
+link <- make_link(data = tilrettelegging_s_24_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = tilrettelegging_s_24_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(tilrettelegging_s_24_fct_cat_plot_html)
+```
+
+_Samlet sett, opplever du at det har vært manglende tilrettelegging for å ta videreutdanning på din arbeidsplass?_. `{r} x`.
+
+:::

@@ -1,0 +1,83 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 2.0
+
+---
+# Motivasjon
+```{r}
+#| label: 'Import data for 3_Motivasjon'
+data_3_Motivasjon <- qs::qread('3_Motivasjon/data_3_Motivasjon.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+## Hva var viktige og mindre viktige grunner til at du bestemte deg for å søke om lederutdanning? Dersom en grunn var særlig viktig for deg er det naturlig at den gis en høyere verdi enn de andre.{#sec-Hva-var-viktige-og-mindre-viktige-grunner-til-at-du-bestemte-deg-for-a-soke-om-lederutdanning-Dersom-en-grunn-var-sarlig-viktig-for-deg-er-det-naturlig-at-den-gis-en-hoyere-verdi-enn-de-andre--60}
+
+
+::: {#fig-motivasjon-s-8-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=11, n_cats_y=4, max_chars_cats_y=12, multiplier_per_plot=9)}
+motivasjon_s_8_fct_cat_plot_html <-
+	data_3_Motivasjon |>
+		makeme(dep = c(s_8_1,s_8_2,s_8_3,s_8_4,s_8_9,s_8_10,s_8_5,s_8_6,s_8_7,s_8_8,s_8_11),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(motivasjon_s_8_fct_cat_plot_html[[1]]))
+link <- make_link(data = motivasjon_s_8_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = motivasjon_s_8_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(motivasjon_s_8_fct_cat_plot_html)
+```
+
+_Hva var viktige og mindre viktige grunner til at du bestemte deg for å søke om lederutdanning? Dersom en grunn var særlig viktig for deg er det naturlig at den gis en høyere verdi enn de andre._. `{r} x`.
+
+:::
+
+
+## I hvilken grad var du selv motivert for å ta lederutdanning?{#sec-I-hvilken-grad-var-du-selv-motivert-for-a-ta-lederutdanning--26}
+
+
+::: {#fig-motivasjon-s-17-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=22, multiplier_per_plot=.2)}
+motivasjon_s_17_fct_cat_plot_html <-
+	data_3_Motivasjon |>
+		makeme(dep = c(s_17),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(motivasjon_s_17_fct_cat_plot_html[[1]]))
+link <- make_link(data = motivasjon_s_17_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = motivasjon_s_17_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(motivasjon_s_17_fct_cat_plot_html)
+```
+
+_I hvilken grad var du selv motivert for å ta lederutdanning?_. `{r} x`.
+
+:::

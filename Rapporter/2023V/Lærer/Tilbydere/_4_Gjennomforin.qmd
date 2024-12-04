@@ -1,0 +1,625 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 3.0
+
+---
+# Gjennomføring
+```{r}
+#| label: 'Import data for 4_Gjennomforin'
+data_4_Gjennomforin <- qs::qread('../4_Gjennomforin/data_4_Gjennomforin.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+## Hvem har vært viktig for deg i arbeidet med å ta i bruk det du har lært i studiet? Flere kryss er mulig.{#sec-Hvem-har-vart-viktig-for-deg-i-arbeidet-med-a-ta-i-bruk-det-du-har-lart-i-studiet-Flere-kryss-er-mulig--24}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-gjennomforing-s-76-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=6, n_cats_y=2, max_chars_cats_y=10)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_76_1,s_76_2,s_76_3,s_76_4,s_76_5,s_76_6),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-gjennomforing-s-76-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=6, n_cats_y=2, max_chars_cats_y=10)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_76_1,s_76_2,s_76_3,s_76_4,s_76_5,s_76_6),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Hvem har vært viktig for deg i arbeidet med å ta i bruk det du har lært i studiet? Flere kryss er mulig._ by __
+
+:::
+
+
+## Hvor enig er du i de følgende påstandene om undervisningen som har foregått på nett?{#sec-Hvor-enig-er-du-i-de-folgende-pastandene-om-undervisningen-som-har-foregatt-pa-nett--40}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-gjennomforing-s-90-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=6, n_cats_y=6, max_chars_cats_y=22)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_90_7,s_90_8,s_90_9,s_90_10,s_90_11,s_90_12),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-gjennomforing-s-90-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=6, n_cats_y=6, max_chars_cats_y=22)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_90_7,s_90_8,s_90_9,s_90_10,s_90_11,s_90_12),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Hvor enig er du i de følgende påstandene om undervisningen som har foregått på nett?_ by __
+
+:::
+
+
+## Jeg har diskutert det jeg har lært med andre på skolen{#sec-Jeg-har-diskutert-det-jeg-har-lart-med-andre-pa-skolen-90}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-gjennomforing-s-125-5-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_125_5),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-gjennomforing-s-125-5-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_125_5),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Jeg har diskutert det jeg har lært med andre på skolen_ by __
+
+:::
+
+
+## Jeg har prøvd ut det jeg har lært{#sec-Jeg-har-provd-ut-det-jeg-har-lart-82}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-gjennomforing-s-125-1-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_125_1),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-gjennomforing-s-125-1-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_125_1),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Jeg har prøvd ut det jeg har lært_ by __
+
+:::
+
+
+## Jeg har reflektert over lærerrollen{#sec-Jeg-har-reflektert-over-larerrollen-53}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-gjennomforing-s-125-2-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_125_2),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-gjennomforing-s-125-2-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_125_2),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Jeg har reflektert over lærerrollen_ by __
+
+:::
+
+
+## Jeg har samarbeidet i nettverk med lærere fra andre skoler{#sec-Jeg-har-samarbeidet-i-nettverk-med-larere-fra-andre-skoler-15}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-gjennomforing-s-125-6-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_125_6),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-gjennomforing-s-125-6-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_125_6),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Jeg har samarbeidet i nettverk med lærere fra andre skoler_ by __
+
+:::
+
+
+## Jeg har samarbeidet med andre på skolen om å bruke det jeg har lært på studiet{#sec-Jeg-har-samarbeidet-med-andre-pa-skolen-om-a-bruke-det-jeg-har-lart-pa-studiet-25}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-gjennomforing-s-125-3-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_125_3),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-gjennomforing-s-125-3-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_125_3),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Jeg har samarbeidet med andre på skolen om å bruke det jeg har lært på studiet_ by __
+
+:::
+
+
+## Jeg har samarbeidet med andre på studiet{#sec-Jeg-har-samarbeidet-med-andre-pa-studiet-40}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-gjennomforing-s-125-4-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_125_4),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-gjennomforing-s-125-4-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_125_4),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Jeg har samarbeidet med andre på studiet_ by __
+
+:::
+
+
+## Jeg har samarbeidet med ledelsen ved skolen{#sec-Jeg-har-samarbeidet-med-ledelsen-ved-skolen-42}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-gjennomforing-s-125-7-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_125_7),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-gjennomforing-s-125-7-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_125_7),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Jeg har samarbeidet med ledelsen ved skolen_ by __
+
+:::
+
+
+## Var studiet lagt opp som et helt eller delvis nettbasert studium?{#sec-Var-studiet-lagt-opp-som-et-helt-eller-delvis-nettbasert-studium--62}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-gjennomforing-s-29-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=3, max_chars_cats_y=44)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_29),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-gjennomforing-s-29-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=3, max_chars_cats_y=44)
+plot <-
+	makeme(data = data_4_Gjennomforin,
+	dep = c(s_29),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Var studiet lagt opp som et helt eller delvis nettbasert studium?_ by __
+
+:::

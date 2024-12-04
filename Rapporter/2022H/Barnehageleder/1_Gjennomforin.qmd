@@ -1,0 +1,203 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 0.0
+
+---
+# Gjennomføring
+```{r}
+#| label: 'Import data for 1_Gjennomforin'
+data_1_Gjennomforin <- qs::qread('1_Gjennomforin/data_1_Gjennomforin.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+## Har deler av utdanningen foregått digitalt?{#sec-Har-deler-av-utdanningen-foregatt-digitalt--93}
+
+
+::: {#fig-gjennomforing-s-8-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=2, max_chars_cats_y=3, multiplier_per_plot=.5)}
+gjennomforing_s_8_fct_cat_plot_html <-
+	data_1_Gjennomforin |>
+		makeme(dep = c(s_8),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(gjennomforing_s_8_fct_cat_plot_html[[1]]))
+link <- make_link(data = gjennomforing_s_8_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = gjennomforing_s_8_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(gjennomforing_s_8_fct_cat_plot_html)
+```
+
+_Har deler av utdanningen foregått digitalt?_. `{r} x`.
+
+:::
+
+
+## Hvem har vært viktig for deg i å oversette det du har lært i videreutdanningen til praksis? Flere kryss er mulig.{#sec-Hvem-har-vart-viktig-for-deg-i-a-oversette-det-du-har-lart-i-videreutdanningen-til-praksis-Flere-kryss-er-mulig--78}
+
+
+::: {#fig-gjennomforing-s-35-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=7, n_cats_y=2, max_chars_cats_y=10)}
+gjennomforing_s_35_fct_cat_plot_html <-
+	data_1_Gjennomforin |>
+		makeme(dep = c(s_35_1,s_35_2,s_35_3,s_35_4,s_35_5,s_35_6,s_35_7),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(gjennomforing_s_35_fct_cat_plot_html[[1]]))
+link <- make_link(data = gjennomforing_s_35_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = gjennomforing_s_35_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(gjennomforing_s_35_fct_cat_plot_html)
+```
+
+_Hvem har vært viktig for deg i å oversette det du har lært i videreutdanningen til praksis? Flere kryss er mulig._. `{r} x`.
+
+:::
+
+
+## Hvor enig er du i utsagnene under om samarbeid og støtte i studiene?{#sec-Hvor-enig-er-du-i-utsagnene-under-om-samarbeid-og-stotte-i-studiene--18}
+
+
+::: {#fig-gjennomforing-s-3-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=3, n_cats_y=6, max_chars_cats_y=14)}
+gjennomforing_s_3_fct_cat_plot_html <-
+	data_1_Gjennomforin |>
+		makeme(dep = c(s_33_1,s_33_2,s_33_3),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(gjennomforing_s_3_fct_cat_plot_html[[1]]))
+link <- make_link(data = gjennomforing_s_3_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = gjennomforing_s_3_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(gjennomforing_s_3_fct_cat_plot_html)
+```
+
+_Hvor enig er du i utsagnene under om samarbeid og støtte i studiene?_. `{r} x`.
+
+:::
+
+
+## Hvordan vurderer du det å kombinere{#sec-Hvordan-vurderer-du-det-a-kombinere-87}
+
+
+::: {#fig-gjennomforing-s-60-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=2, n_cats_y=5, max_chars_cats_y=26, multiplier_per_plot=.2)}
+gjennomforing_s_60_fct_cat_plot_html <-
+	data_1_Gjennomforin |>
+		makeme(dep = c(s_60_1,s_60_2),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(gjennomforing_s_60_fct_cat_plot_html[[1]]))
+link <- make_link(data = gjennomforing_s_60_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = gjennomforing_s_60_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(gjennomforing_s_60_fct_cat_plot_html)
+```
+
+_Hvordan vurderer du det å kombinere_. `{r} x`.
+
+:::
+
+
+## Hvordan vurderer du utbyttet av de delene av utdanningen som har vært digitale?{#sec-Hvordan-vurderer-du-utbyttet-av-de-delene-av-utdanningen-som-har-vart-digitale--03}
+
+
+::: {#fig-gjennomforing-s-24-3-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=15, multiplier_per_plot=.1)}
+gjennomforing_s_24_3_fct_cat_plot_html <-
+	data_1_Gjennomforin |>
+		makeme(dep = c(s_24_3),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(gjennomforing_s_24_3_fct_cat_plot_html[[1]]))
+link <- make_link(data = gjennomforing_s_24_3_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = gjennomforing_s_24_3_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(gjennomforing_s_24_3_fct_cat_plot_html)
+```
+
+_Hvordan vurderer du utbyttet av de delene av utdanningen som har vært digitale?_. `{r} x`.
+
+:::
+
+
+## I hvilken grad stemmer disse utsagnene?{#sec-I-hvilken-grad-stemmer-disse-utsagnene--50}
+
+
+::: {#fig-gjennomforing-s-26-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=6, n_cats_y=5, max_chars_cats_y=18)}
+gjennomforing_s_26_fct_cat_plot_html <-
+	data_1_Gjennomforin |>
+		makeme(dep = c(s_26_1,s_26_2,s_26_3,s_26_4,s_26_5,s_26_6),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(gjennomforing_s_26_fct_cat_plot_html[[1]]))
+link <- make_link(data = gjennomforing_s_26_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = gjennomforing_s_26_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(gjennomforing_s_26_fct_cat_plot_html)
+```
+
+_I hvilken grad stemmer disse utsagnene?_. `{r} x`.
+
+:::
+
+
+## Vi er interessert i å vite hvordan du har jobbet med utdanningen mellom samlingene. Vennligst angi i hvilken grad følgende utsagn stemmer:{#sec-Vi-er-interessert-i-a-vite-hvordan-du-har-jobbet-med-utdanningen-mellom-samlingene-Vennligst-angi-i-hvilken-grad-folgende-utsagn-stemmer--35}
+
+
+::: {#fig-gjennomforing-s-32-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=11, n_cats_y=5, max_chars_cats_y=18, multiplier_per_plot=1.4)}
+gjennomforing_s_32_fct_cat_plot_html <-
+	data_1_Gjennomforin |>
+		makeme(dep = c(s_32_1,s_32_2,s_32_3,s_32_4,s_32_5,s_32_6,s_32_7,s_32_8,s_32_9,s_32_10,s_32_11),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(gjennomforing_s_32_fct_cat_plot_html[[1]]))
+link <- make_link(data = gjennomforing_s_32_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = gjennomforing_s_32_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(gjennomforing_s_32_fct_cat_plot_html)
+```
+
+_Vi er interessert i å vite hvordan du har jobbet med utdanningen mellom samlingene. Vennligst angi i hvilken grad følgende utsagn stemmer:_. `{r} x`.
+
+:::

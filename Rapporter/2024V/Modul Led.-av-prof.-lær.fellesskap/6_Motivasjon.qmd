@@ -1,0 +1,59 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 5.0
+
+---
+# Motivasjon
+```{r}
+#| label: 'Import data for 6_Motivasjon'
+data_6_Motivasjon <- qs::qread('6_Motivasjon/data_6_Motivasjon.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+## I hvilken grad var du selv motivert for å ta lederutdanning?{#sec-I-hvilken-grad-var-du-selv-motivert-for-a-ta-lederutdanning--75}
+
+
+::: {#fig-motivasjon-q6-2-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=22, multiplier_per_plot=0.2)}
+motivasjon_q6_2_fct_cat_plot_html <-
+	data_6_Motivasjon |>
+		makeme(dep = c(Q6.2),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(motivasjon_q6_2_fct_cat_plot_html[[1]]))
+link <- make_link(data = motivasjon_q6_2_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = motivasjon_q6_2_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(motivasjon_q6_2_fct_cat_plot_html)
+```
+
+_I hvilken grad var du selv motivert for å ta lederutdanning?_. `{r} x`.
+
+:::

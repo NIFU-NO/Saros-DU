@@ -1,0 +1,8 @@
+---
+params:
+  mesos_var: campus2
+  mesos_group: NMBU
+---
+
+{{< include ../_2_Tilrettelegg.qmd >}}
+

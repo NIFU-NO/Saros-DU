@@ -1,0 +1,59 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 1.0
+
+---
+# Kunnskapsdeling
+```{r}
+#| label: 'Import data for 2_Kunnskapsdel'
+data_2_Kunnskapsdel <- qs::qread('2_Kunnskapsdel/data_2_Kunnskapsdel.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+## På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av kunnskapsdeling i barnehagen/på skolen og i kommunen/fylkeskommunen der du jobber.{#sec-Pa-en-skala-fra-1-helt-uenig-til-6-helt-enig-vennligst-gi-din-oppfatning-av-kunnskapsdeling-i-barnehagen-pa-skolen-og-i-kommunen-fylkeskommunen-der-du-jobber--56}
+
+
+::: {#fig-kunnskapsdeling-q8-2-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=8, n_cats_y=6, max_chars_cats_y=14, multiplier_per_plot=6)}
+kunnskapsdeling_q8_2_fct_cat_plot_html <-
+	data_2_Kunnskapsdel |>
+		makeme(dep = c(Q8.2_1,Q8.2_2,Q8.2_3,Q8.2_4,Q8.2_5,Q8.2_6,Q8.2_7,Q8.2_8),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(kunnskapsdeling_q8_2_fct_cat_plot_html[[1]]))
+link <- make_link(data = kunnskapsdeling_q8_2_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = kunnskapsdeling_q8_2_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(kunnskapsdeling_q8_2_fct_cat_plot_html)
+```
+
+_På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av kunnskapsdeling i barnehagen/på skolen og i kommunen/fylkeskommunen der du jobber._. `{r} x`.
+
+:::

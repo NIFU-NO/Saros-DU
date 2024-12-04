@@ -1,0 +1,203 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 0.0
+
+---
+# Forutsetningene for videreutdanning
+```{r}
+#| label: 'Import data for 1_Forutsetning'
+data_1_Forutsetning <- qs::qread('1_Forutsetning/data_1_Forutsetning.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+## Alt i alt, opplever du at det har vært manglende tilrettelegging for å studere på din arbeidsplass?{#sec-Alt-i-alt-opplever-du-at-det-har-vart-manglende-tilrettelegging-for-a-studere-pa-din-arbeidsplass--76}
+
+
+::: {#fig-forutsetningene-for-videreutdanning-s-11-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=30, multiplier_per_plot=0.1)}
+forutsetningene_for_videreutdanning_s_11_fct_cat_plot_html <-
+	data_1_Forutsetning |>
+		makeme(dep = c(s_11),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(forutsetningene_for_videreutdanning_s_11_fct_cat_plot_html[[1]]))
+link <- make_link(data = forutsetningene_for_videreutdanning_s_11_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = forutsetningene_for_videreutdanning_s_11_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(forutsetningene_for_videreutdanning_s_11_fct_cat_plot_html)
+```
+
+_Alt i alt, opplever du at det har vært manglende tilrettelegging for å studere på din arbeidsplass?_. `{r} x`.
+
+:::
+
+
+## Har du fått dekket økonomiske utgifter i forbindelse med utdanningen?{#sec-Har-du-fatt-dekket-okonomiske-utgifter-i-forbindelse-med-utdanningen--24}
+
+
+::: {#fig-forutsetningene-for-videreutdanning-s-15-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=2, max_chars_cats_y=3, multiplier_per_plot=0.5)}
+forutsetningene_for_videreutdanning_s_15_fct_cat_plot_html <-
+	data_1_Forutsetning |>
+		makeme(dep = c(s_15),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(forutsetningene_for_videreutdanning_s_15_fct_cat_plot_html[[1]]))
+link <- make_link(data = forutsetningene_for_videreutdanning_s_15_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = forutsetningene_for_videreutdanning_s_15_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(forutsetningene_for_videreutdanning_s_15_fct_cat_plot_html)
+```
+
+_Har du fått dekket økonomiske utgifter i forbindelse med utdanningen?_. `{r} x`.
+
+:::
+
+
+## Hvordan vurderer du det å kombinere{#sec-Hvordan-vurderer-du-det-a-kombinere-72}
+
+
+::: {#fig-forutsetningene-for-videreutdanning-s-75-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=2, n_cats_y=5, max_chars_cats_y=26, multiplier_per_plot=0.3)}
+forutsetningene_for_videreutdanning_s_75_fct_cat_plot_html <-
+	data_1_Forutsetning |>
+		makeme(dep = c(s_75_1,s_75_2),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(forutsetningene_for_videreutdanning_s_75_fct_cat_plot_html[[1]]))
+link <- make_link(data = forutsetningene_for_videreutdanning_s_75_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = forutsetningene_for_videreutdanning_s_75_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(forutsetningene_for_videreutdanning_s_75_fct_cat_plot_html)
+```
+
+_Hvordan vurderer du det å kombinere_. `{r} x`.
+
+:::
+
+
+## I hvilken grad ble det tilrettelagt for utdanningen ved at andre avlastet deg for noen av dine oppgaver{#sec-I-hvilken-grad-ble-det-tilrettelagt-for-utdanningen-ved-at-andre-avlastet-deg-for-noen-av-dine-oppgaver-47}
+
+
+::: {#fig-forutsetningene-for-videreutdanning-s-19-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=2, n_cats_y=5, max_chars_cats_y=18, multiplier_per_plot=0.3)}
+forutsetningene_for_videreutdanning_s_19_fct_cat_plot_html <-
+	data_1_Forutsetning |>
+		makeme(dep = c(s_19_1,s_19_2),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(forutsetningene_for_videreutdanning_s_19_fct_cat_plot_html[[1]]))
+link <- make_link(data = forutsetningene_for_videreutdanning_s_19_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = forutsetningene_for_videreutdanning_s_19_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(forutsetningene_for_videreutdanning_s_19_fct_cat_plot_html)
+```
+
+_I hvilken grad ble det tilrettelagt for utdanningen ved at andre avlastet deg for noen av dine oppgaver_. `{r} x`.
+
+:::
+
+
+## I hvilken grad mener du utgiftsdekkingen har vært tilstrekkelig?{#sec-I-hvilken-grad-mener-du-utgiftsdekkingen-har-vart-tilstrekkelig--27}
+
+
+::: {#fig-forutsetningene-for-videreutdanning-s-18-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=30, multiplier_per_plot=0.1)}
+forutsetningene_for_videreutdanning_s_18_fct_cat_plot_html <-
+	data_1_Forutsetning |>
+		makeme(dep = c(s_18),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(forutsetningene_for_videreutdanning_s_18_fct_cat_plot_html[[1]]))
+link <- make_link(data = forutsetningene_for_videreutdanning_s_18_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = forutsetningene_for_videreutdanning_s_18_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(forutsetningene_for_videreutdanning_s_18_fct_cat_plot_html)
+```
+
+_I hvilken grad mener du utgiftsdekkingen har vært tilstrekkelig?_. `{r} x`.
+
+:::
+
+
+## I hvilken grad var du selv motivert for å ta lederutdanning?{#sec-I-hvilken-grad-var-du-selv-motivert-for-a-ta-lederutdanning--95}
+
+
+::: {#fig-forutsetningene-for-videreutdanning-s-17-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18, multiplier_per_plot=0.1)}
+forutsetningene_for_videreutdanning_s_17_fct_cat_plot_html <-
+	data_1_Forutsetning |>
+		makeme(dep = c(s_17),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(forutsetningene_for_videreutdanning_s_17_fct_cat_plot_html[[1]]))
+link <- make_link(data = forutsetningene_for_videreutdanning_s_17_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = forutsetningene_for_videreutdanning_s_17_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(forutsetningene_for_videreutdanning_s_17_fct_cat_plot_html)
+```
+
+_I hvilken grad var du selv motivert for å ta lederutdanning?_. `{r} x`.
+
+:::
+
+
+## På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av kunnskapsdeling på barnehagen og i kommunen der du jobber{#sec-Pa-en-skala-fra-1-helt-uenig-til-6-helt-enig-vennligst-gi-din-oppfatning-av-kunnskapsdeling-pa-barnehagen-og-i-kommunen-der-du-jobber-24}
+
+
+::: {#fig-forutsetningene-for-videreutdanning-s-34-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=2, n_cats_y=6, max_chars_cats_y=14, multiplier_per_plot=0.8)}
+forutsetningene_for_videreutdanning_s_34_fct_cat_plot_html <-
+	data_1_Forutsetning |>
+		makeme(dep = c(s_34_1,s_34_8),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(forutsetningene_for_videreutdanning_s_34_fct_cat_plot_html[[1]]))
+link <- make_link(data = forutsetningene_for_videreutdanning_s_34_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = forutsetningene_for_videreutdanning_s_34_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(forutsetningene_for_videreutdanning_s_34_fct_cat_plot_html)
+```
+
+_På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av kunnskapsdeling på barnehagen og i kommunen der du jobber_. `{r} x`.
+
+:::

@@ -1,0 +1,131 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 3.0
+
+---
+# Utbytte
+```{r}
+#| label: 'Import data for 4_Utbytte'
+data_4_Utbytte <- qs::qread('4_Utbytte/data_4_Utbytte.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+## I hvilken grad er du fornøyd med utdanningen som helhet?{#sec-I-hvilken-grad-er-du-fornoyd-med-utdanningen-som-helhet--59}
+
+
+::: {#fig-utbytte-q10-14-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18, multiplier_per_plot=.2)}
+utbytte_q10_14_fct_cat_plot_html <-
+	data_4_Utbytte |>
+		makeme(dep = c(Q10.14),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(utbytte_q10_14_fct_cat_plot_html[[1]]))
+link <- make_link(data = utbytte_q10_14_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = utbytte_q10_14_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(utbytte_q10_14_fct_cat_plot_html)
+```
+
+_I hvilken grad er du fornøyd med utdanningen som helhet?_. `{r} x`.
+
+:::
+
+
+## I hvilken grad stemmer disse utsagnene?{#sec-I-hvilken-grad-stemmer-disse-utsagnene--40}
+
+
+::: {#fig-utbytte-q9-5-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=5, n_cats_y=5, max_chars_cats_y=18)}
+utbytte_q9_5_fct_cat_plot_html <-
+	data_4_Utbytte |>
+		makeme(dep = c(Q9.5_1,Q9.5_2,Q9.5_3,Q9.5_4,Q9.5_5),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(utbytte_q9_5_fct_cat_plot_html[[1]]))
+link <- make_link(data = utbytte_q9_5_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = utbytte_q9_5_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(utbytte_q9_5_fct_cat_plot_html)
+```
+
+_I hvilken grad stemmer disse utsagnene?_. `{r} x`.
+
+:::
+
+
+## Lederutdanningen har gitt meg kompetanse til å{#sec-Lederutdanningen-har-gitt-meg-kompetanse-til-a-59}
+
+
+::: {#fig-utbytte-q10-7-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=3, n_cats_y=6, max_chars_cats_y=14)}
+utbytte_q10_7_fct_cat_plot_html <-
+	data_4_Utbytte |>
+		makeme(dep = c(Q10.7_1,Q10.7_2,Q10.7_3),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(utbytte_q10_7_fct_cat_plot_html[[1]]))
+link <- make_link(data = utbytte_q10_7_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = utbytte_q10_7_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(utbytte_q10_7_fct_cat_plot_html)
+```
+
+_Lederutdanningen har gitt meg kompetanse til å_. `{r} x`.
+
+:::
+
+
+## På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av læringsutbyttet av lederutdanningen{#sec-Pa-en-skala-fra-1-helt-uenig-til-6-helt-enig-vennligst-gi-din-oppfatning-av-laringsutbyttet-av-lederutdanningen-04}
+
+
+::: {#fig-utbytte-q1-2-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=8, n_cats_y=6, max_chars_cats_y=14, multiplier_per_plot=9)}
+utbytte_q1_2_fct_cat_plot_html <-
+	data_4_Utbytte |>
+		makeme(dep = c(Q11.2_1,Q11.2_2,Q11.2_3,Q11.2_4,Q11.2_5,Q11.2_6,Q11.2_7,Q11.2_8),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(utbytte_q1_2_fct_cat_plot_html[[1]]))
+link <- make_link(data = utbytte_q1_2_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = utbytte_q1_2_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(utbytte_q1_2_fct_cat_plot_html)
+```
+
+_På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av læringsutbyttet av lederutdanningen_. `{r} x`.
+
+:::

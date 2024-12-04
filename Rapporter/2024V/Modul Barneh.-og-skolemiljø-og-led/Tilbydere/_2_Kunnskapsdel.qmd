@@ -1,0 +1,115 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 1.0
+title: Kunnskapsdeling
+---
+# Kunnskapsdeling
+```{r}
+#| label: 'Import data for 2_Kunnskapsdel'
+data_2_Kunnskapsdel <- qs::qread('../2_Kunnskapsdel/data_2_Kunnskapsdel.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+## På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av kunnskapsdeling i barnehagen/på skolen og i kommunen/fylkeskommunen der du jobber.{#sec-Pa-en-skala-fra-1-helt-uenig-til-6-helt-enig-vennligst-gi-din-oppfatning-av-kunnskapsdeling-i-barnehagen-pa-skolen-og-i-kommunen-fylkeskommunen-der-du-jobber--01}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-kunnskapsdeling-q8-2-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=8, n_cats_y=6, max_chars_cats_y=14, multiplier_per_plot=9)
+plot <-
+	makeme(data = data_2_Kunnskapsdel,
+	dep = c(Q8.2_1,Q8.2_2,Q8.2_3,Q8.2_4,Q8.2_5,Q8.2_6,Q8.2_7,Q8.2_8),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-kunnskapsdeling-q8-2-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=8, n_cats_y=6, max_chars_cats_y=14)
+plot <-
+	makeme(data = data_2_Kunnskapsdel,
+	dep = c(Q8.2_1,Q8.2_2,Q8.2_3,Q8.2_4,Q8.2_5,Q8.2_6,Q8.2_7,Q8.2_8),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av kunnskapsdeling i barnehagen/på skolen og i kommunen/fylkeskommunen der du jobber._ by __
+
+:::
+
+
+## Vi ønsker mer kunnskap om hvordan barnehage-/skoleeier involveres i lederutdanningen. Kan du beskrive med egne ord hvordan denne involveringen var for ditt vedkommende og hva slags dialog du hadde med eier i forbindelse med utdanningen?{#sec-Vi-onsker-mer-kunnskap-om-hvordan-barnehage-skoleeier-involveres-i-lederutdanningen-Kan-du-beskrive-med-egne-ord-hvordan-denne-involveringen-var-for-ditt-vedkommende-og-hva-slags-dialog-du-hadde-med-eier-i-forbindelse-med-utdanningen--79}
+
+
+::: {#tbl-kunnskapsdeling-q8-3-chr-chr-table-target}
+
+```{r}
+table <-
+	makeme(data = data_2_Kunnskapsdel,
+		dep = c(Q8.3),
+		type = 'chr_table_html',
+		crowd='target',
+		mesos_var = params$mesos_var,
+		mesos_group = params$mesos_group)
+gt(table[[1]])
+```
+
+_Vi ønsker mer kunnskap om hvordan barnehage-/skoleeier involveres i lederutdanningen. Kan du beskrive med egne ord hvordan denne involveringen var for ditt vedkommende og hva slags dialog du hadde med eier i forbindelse med utdanningen?_ for `{r} params$mesos_group`.
+
+:::

@@ -1,0 +1,372 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 2.0
+
+---
+# Motivasjon
+```{r}
+#| label: 'Import data for 3_Motivasjon'
+data_3_Motivasjon <- qs::qread('../3_Motivasjon/data_3_Motivasjon.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+## Dersom det er andre deler ved studiet som har vært viktig for ditt læringsutbytte kan du skrive det her:{#sec-Dersom-det-er-andre-deler-ved-studiet-som-har-vart-viktig-for-ditt-laringsutbytte-kan-du-skrive-det-her--93}
+
+
+::: {#tbl-motivasjon-s-46-chr-chr-table-target}
+
+```{r}
+table <-
+	makeme(data = data_3_Motivasjon,
+		dep = c(s_46),
+		type = 'chr_table_html',
+		crowd='target',
+		mesos_var = params$mesos_var,
+		mesos_group = params$mesos_group)
+gt(table[[1]])
+```
+
+_Dersom det er andre deler ved studiet som har vært viktig for ditt læringsutbytte kan du skrive det her:_ for `{r} params$mesos_group`.
+
+:::
+
+
+## Hva var viktige grunner til at du ikke begynte på studiet?{#sec-Hva-var-viktige-grunner-til-at-du-ikke-begynte-pa-studiet--35}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-motivasjon-s-25-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=10, n_cats_y=2, max_chars_cats_y=10)
+plot <-
+	makeme(data = data_3_Motivasjon,
+	dep = c(s_25_1,s_25_2,s_25_3,s_25_4,s_25_5,s_25_6,s_25_7,s_25_8,s_25_9,s_25_10),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-motivasjon-s-25-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=10, n_cats_y=2, max_chars_cats_y=10)
+plot <-
+	makeme(data = data_3_Motivasjon,
+	dep = c(s_25_1,s_25_2,s_25_3,s_25_4,s_25_5,s_25_6,s_25_7,s_25_8,s_25_9,s_25_10),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Hva var viktige grunner til at du ikke begynte på studiet?_ by __
+
+:::
+
+
+## Hva var viktige og mindre viktige grunner til at du bestemte deg for å søke om videreutdanning? Dersom en grunn var særlig viktig for deg er det naturlig at den gis en høyere verdi enn de andre.{#sec-Hva-var-viktige-og-mindre-viktige-grunner-til-at-du-bestemte-deg-for-a-soke-om-videreutdanning-Dersom-en-grunn-var-sarlig-viktig-for-deg-er-det-naturlig-at-den-gis-en-hoyere-verdi-enn-de-andre--35}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-motivasjon-s-12-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=11, n_cats_y=7, max_chars_cats_y=17)
+plot <-
+	makeme(data = data_3_Motivasjon,
+	dep = c(s_12_1,s_12_2,s_12_3,s_12_4,s_12_5,s_12_6,s_12_7,s_12_8,s_12_11,s_12_12,s_12_13),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-motivasjon-s-12-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=11, n_cats_y=7, max_chars_cats_y=17)
+plot <-
+	makeme(data = data_3_Motivasjon,
+	dep = c(s_12_1,s_12_2,s_12_3,s_12_4,s_12_5,s_12_6,s_12_7,s_12_8,s_12_11,s_12_12,s_12_13),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Hva var viktige og mindre viktige grunner til at du bestemte deg for å søke om videreutdanning? Dersom en grunn var særlig viktig for deg er det naturlig at den gis en høyere verdi enn de andre._ by __
+
+:::
+
+
+## Hvis det var andre grunner, enn de overnevnte, som var viktig for at du søkte om videreutdanning kan du skrive dem inn her:{#sec-Hvis-det-var-andre-grunner-enn-de-overnevnte-som-var-viktig-for-at-du-sokte-om-videreutdanning-kan-du-skrive-dem-inn-her--10}
+
+
+::: {#tbl-motivasjon-s-21-chr-chr-table-target}
+
+```{r}
+table <-
+	makeme(data = data_3_Motivasjon,
+		dep = c(s_21),
+		type = 'chr_table_html',
+		crowd='target',
+		mesos_var = params$mesos_var,
+		mesos_group = params$mesos_group)
+gt(table[[1]])
+```
+
+_Hvis det var andre grunner, enn de overnevnte, som var viktig for at du søkte om videreutdanning kan du skrive dem inn her:_ for `{r} params$mesos_group`.
+
+:::
+
+
+## Hvor enig er du i følgende utsagn om studiet og din bruk av digitale ressurser?{#sec-Hvor-enig-er-du-i-folgende-utsagn-om-studiet-og-din-bruk-av-digitale-ressurser--19}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-motivasjon-s-47-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=9, n_cats_y=5, max_chars_cats_y=14)
+plot <-
+	makeme(data = data_3_Motivasjon,
+	dep = c(s_47_1,s_47_2,s_47_3,s_47_4,s_47_5,s_47_6,s_47_7,s_47_8,s_47_9),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-motivasjon-s-47-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=9, n_cats_y=5, max_chars_cats_y=14)
+plot <-
+	makeme(data = data_3_Motivasjon,
+	dep = c(s_47_1,s_47_2,s_47_3,s_47_4,s_47_5,s_47_6,s_47_7,s_47_8,s_47_9),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Hvor enig er du i følgende utsagn om studiet og din bruk av digitale ressurser?_ by __
+
+:::
+
+
+## Hvordan vurderer du det å kombinere{#sec-Hvordan-vurderer-du-det-a-kombinere-94}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-motivasjon-s-12-fct-cat-plot-html-1-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=2, n_cats_y=5, max_chars_cats_y=26)
+plot <-
+	makeme(data = data_3_Motivasjon,
+	dep = c(s_12_9,s_12_10),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-motivasjon-s-12-fct-cat-plot-html-1-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=2, n_cats_y=5, max_chars_cats_y=26)
+plot <-
+	makeme(data = data_3_Motivasjon,
+	dep = c(s_12_9,s_12_10),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Hvordan vurderer du det å kombinere_ by __
+
+:::
+
+
+## I hvilken grad var du selv motivert for å ta videreutdanning?{#sec-I-hvilken-grad-var-du-selv-motivert-for-a-ta-videreutdanning--60}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-motivasjon-s-32-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_3_Motivasjon,
+	dep = c(s_32),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-motivasjon-s-32-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_3_Motivasjon,
+	dep = c(s_32),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_I hvilken grad var du selv motivert for å ta videreutdanning?_ by __
+
+:::

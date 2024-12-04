@@ -1,0 +1,153 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 1.0
+
+---
+# Motivasjon
+```{r}
+#| label: 'Import data for 2_Motivasjon'
+data_2_Motivasjon <- qs::qread('../2_Motivasjon/data_2_Motivasjon.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+## Hva var viktige og mindre viktige grunner til at du bestemte deg for å søke om lederutdanning? Dersom en grunn var særlig viktig for deg, er det naturlig at den gis en høyere verdi enn de andre.{#sec-Hva-var-viktige-og-mindre-viktige-grunner-til-at-du-bestemte-deg-for-a-soke-om-lederutdanning-Dersom-en-grunn-var-sarlig-viktig-for-deg-er-det-naturlig-at-den-gis-en-hoyere-verdi-enn-de-andre--44}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-motivasjon-s-14-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=11, n_cats_y=4, max_chars_cats_y=13)
+plot <-
+	makeme(data = data_2_Motivasjon,
+	dep = c(s_14_1,s_14_2,s_14_3,s_14_4,s_14_5,s_14_6,s_14_7,s_14_8,s_14_9,s_14_10,s_14_11),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-motivasjon-s-14-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=11, n_cats_y=4, max_chars_cats_y=13)
+plot <-
+	makeme(data = data_2_Motivasjon,
+	dep = c(s_14_1,s_14_2,s_14_3,s_14_4,s_14_5,s_14_6,s_14_7,s_14_8,s_14_9,s_14_10,s_14_11),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Hva var viktige og mindre viktige grunner til at du bestemte deg for å søke om lederutdanning? Dersom en grunn var særlig viktig for deg, er det naturlig at den gis en høyere verdi enn de andre._ by __
+
+:::
+
+
+## I hvilken grad var du selv motivert for å ta lederutdanning?{#sec-I-hvilken-grad-var-du-selv-motivert-for-a-ta-lederutdanning--87}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-motivasjon-s-25-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=22)
+plot <-
+	makeme(data = data_2_Motivasjon,
+	dep = c(s_25),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-motivasjon-s-25-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=22)
+plot <-
+	makeme(data = data_2_Motivasjon,
+	dep = c(s_25),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_I hvilken grad var du selv motivert for å ta lederutdanning?_ by __
+
+:::

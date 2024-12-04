@@ -1,0 +1,730 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 0.0
+
+---
+# Tilrettelegging
+```{r}
+#| label: 'Import data for 1_Tilrettelegg'
+data_1_Tilrettelegg <- qs::qread('../1_Tilrettelegg/data_1_Tilrettelegg.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+
+## Vennligst gi din oppfatning av om mangelen på tilrettelegging påvirket utbyttet fra videreutdanningen{#sec-Hvordan-ble-tilretteleggingsmidlene-brukt-Flere-kryss-mulig--7}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-tilrettelegging-s-19-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=6, max_chars_cats_y=18)
+
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_19),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+  
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-tilrettelegging-s-19-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=6, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_19),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_På en skala fra 1 (Ikke i det hele tatt) til 6 (Hindret sterkt), vennligst gi din oppfatning av om mangelen på tilrettelegging påvirket utbyttet fra videreutdanningen?._ 
+
+:::
+
+
+## Dersom du ønsker å utdype hva som har vært positivt og negativt for ditt læringsutbytte med tilretteleggingen, eller mangelen på tilrettelegging, kan du skrive det her:{#sec-Dersom-du-onsker-a-utdype-hva-som-har-vart-positivt-og-negativt-for-ditt-laringsutbytte-med-tilretteleggingen-eller-mangelen-pa-tilrettelegging-kan-du-skrive-det-her--68}
+
+
+::: {#tbl-tilrettelegging-s-24-chr-chr-table-target}
+
+```{r}
+table <-
+	makeme(data = data_1_Tilrettelegg,
+		dep = c(s_24),
+		type = 'chr_table_html',
+		crowd='target',
+		mesos_var = params$mesos_var,
+		mesos_group = params$mesos_group)
+gt(table[[1]])
+```
+
+_Dersom du ønsker å utdype hva som har vært positivt og negativt for ditt læringsutbytte med tilretteleggingen, eller mangelen på tilrettelegging, kan du skrive det her:_ for `{r} params$mesos_group`.
+
+:::
+
+
+## Hvordan ble tilretteleggingsmidlene brukt?{#sec-Hvordan-ble-tilretteleggingsmidlene-brukt--62}
+
+
+::: {#tbl-tilrettelegging-s-127-chr-chr-table-target}
+
+```{r}
+table <-
+	makeme(data = data_1_Tilrettelegg,
+		dep = c(s_127),
+		type = 'chr_table_html',
+		crowd='target',
+		mesos_var = params$mesos_var,
+		mesos_group = params$mesos_group)
+gt(table[[1]])
+```
+
+_Hvordan ble tilretteleggingsmidlene brukt?_ for `{r} params$mesos_group`.
+
+:::
+
+
+## Hvordan ble tilretteleggingsmidlene brukt? Flere kryss mulig.{#sec-Hvordan-ble-tilretteleggingsmidlene-brukt-Flere-kryss-mulig--75}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-tilrettelegging-s-21-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=6, n_cats_y=2, max_chars_cats_y=10)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_21_1,s_21_2,s_21_3,s_21_4,s_21_5,s_21_6),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-tilrettelegging-s-21-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=6, n_cats_y=2, max_chars_cats_y=10)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_21_1,s_21_2,s_21_3,s_21_4,s_21_5,s_21_6),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Hvordan ble tilretteleggingsmidlene brukt? Flere kryss mulig._ by __
+
+:::
+
+
+## Hvordan er det blitt tilrettelagt for videreutdanningen?{#sec-Hvordan-er-det-blitt-tilrettelagt-for-videreutdanningen--88}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-tilrettelegging-s-14-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=4, max_chars_cats_y=62)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_14),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-tilrettelegging-s-14-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=4, max_chars_cats_y=62)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_14),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Hvordan er det blitt tilrettelagt for videreutdanningen?_ by __
+
+:::
+
+
+## Hvordan vurderer du å kombinere{#sec-Hvordan-vurderer-du-a-kombinere-28}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-tilrettelegging-s-20-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=2, n_cats_y=5, max_chars_cats_y=26)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_20_1,s_20_2),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-tilrettelegging-s-20-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=2, n_cats_y=5, max_chars_cats_y=26)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_20_1,s_20_2),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Hvordan vurderer du å kombinere_ by __
+
+:::
+
+
+## I hvilken grad ble det tilrettelagt for videreutdanningen ved at andre avlastet deg for noen av dine oppgaver...{#sec-I-hvilken-grad-ble-det-tilrettelagt-for-videreutdanningen-ved-at-andre-avlastet-deg-for-noen-av-dine-oppgaver--22}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-tilrettelegging-s-17-fct-cat-plot-html-1-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=2, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_17_3,s_17_4),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-tilrettelegging-s-17-fct-cat-plot-html-1-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=2, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_17_3,s_17_4),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_I hvilken grad ble det tilrettelagt for videreutdanningen ved at andre avlastet deg for noen av dine oppgaver..._ by __
+
+:::
+
+
+## I hvilken grad ble...{#sec-I-hvilken-grad-ble--09}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-tilrettelegging-s-17-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=3, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_17_1,s_17_2,s_17_5),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-tilrettelegging-s-17-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=3, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_17_1,s_17_2,s_17_5),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_I hvilken grad ble..._ by __
+
+:::
+
+
+## I hvilken grad har du fått dekket økonomiske utgifter i forbindelse med videreutdanningen?{#sec-I-hvilken-grad-har-du-fatt-dekket-okonomiske-utgifter-i-forbindelse-med-videreutdanningen--19}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-tilrettelegging-s-15-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=30)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_15),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-tilrettelegging-s-15-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=30)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_15),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_I hvilken grad har du fått dekket økonomiske utgifter i forbindelse med videreutdanningen?_ by __
+
+:::
+
+
+## I hvilken grad mener du utgiftsdekningen har vært tilstrekkelig?{#sec-I-hvilken-grad-mener-du-utgiftsdekningen-har-vart-tilstrekkelig--03}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-tilrettelegging-s-16-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=30)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_16),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-tilrettelegging-s-16-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=30)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_16),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_I hvilken grad mener du utgiftsdekningen har vært tilstrekkelig?_ by __
+
+:::
+
+
+## På en skala fra 1 (Ikke i det hele tatt) til 6 (Bidro sterkt), vennligst gi din oppfatning av om tilretteleggingen påvirket utbyttet fra videreutdanningen?{#sec-Pa-en-skala-fra-1-Ikke-i-det-hele-tatt-til-6-Bidro-sterkt-vennligst-gi-din-oppfatning-av-om-tilretteleggingen-pavirket-utbyttet-fra-videreutdanningen--47}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-tilrettelegging-s-23-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=6, max_chars_cats_y=24)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_23),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-tilrettelegging-s-23-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=6, max_chars_cats_y=24)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_23),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_På en skala fra 1 (Ikke i det hele tatt) til 6 (Bidro sterkt), vennligst gi din oppfatning av om tilretteleggingen påvirket utbyttet fra videreutdanningen?_ by __
+
+:::
+
+
+
+## På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av kunnskapsdeling i barnehagen du jobber{#sec-Pa-en-skala-fra-1-helt-uenig-til-6-helt-enig-vennligst-gi-din-oppfatning-av-kunnskapsdeling-i-barnehagen-du-jobber-94}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-tilrettelegging-s-2-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=5, n_cats_y=6, max_chars_cats_y=14)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_22_1,s_22_2,s_22_3,s_22_4,s_22_5),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-tilrettelegging-s-2-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=5, n_cats_y=6, max_chars_cats_y=14)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_22_1,s_22_2,s_22_3,s_22_4,s_22_5),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av kunnskapsdeling i barnehagen du jobber_ by __
+
+:::
+
+
+## Samlet sett, opplever du at det har vært manglende tilrettelegging for å studere på din arbeidsplass?{#sec-Samlet-sett-opplever-du-at-det-har-vart-manglende-tilrettelegging-for-a-studere-pa-din-arbeidsplass--29}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-tilrettelegging-s-22-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=2, max_chars_cats_y=3)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_22),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-tilrettelegging-s-22-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=2, max_chars_cats_y=3)
+plot <-
+	makeme(data = data_1_Tilrettelegg,
+	dep = c(s_22),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Samlet sett, opplever du at det har vært manglende tilrettelegging for å studere på din arbeidsplass?_ by __
+
+:::

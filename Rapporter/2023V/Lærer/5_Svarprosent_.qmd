@@ -1,0 +1,107 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 4.0
+
+---
+# Svarprosent og deltakere
+```{r}
+#| label: 'Import data for 5_Svarprosent_'
+data_5_Svarprosent_ <- qs::qread('5_Svarprosent_/data_5_Svarprosent_.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+## Kjønn{#sec-Kjonn-67}
+
+
+::: {#fig-svarprosent-og-deltakere-s-100-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=2, max_chars_cats_y=6, multiplier_per_plot=0.5)}
+svarprosent_og_deltakere_s_100_fct_cat_plot_html <-
+	data_5_Svarprosent_ |>
+		makeme(dep = c(s_100),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(svarprosent_og_deltakere_s_100_fct_cat_plot_html[[1]]))
+link <- make_link(data = svarprosent_og_deltakere_s_100_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = svarprosent_og_deltakere_s_100_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(svarprosent_og_deltakere_s_100_fct_cat_plot_html)
+```
+
+_Kjønn_. `{r} x`.
+
+:::
+
+
+## Skoletype{#sec-Skoletype-38}
+
+
+::: {#fig-svarprosent-og-deltakere-skoletype-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=2, max_chars_cats_y=18, multiplier_per_plot=0.5)}
+svarprosent_og_deltakere_skoletype_fct_cat_plot_html <-
+	data_5_Svarprosent_ |>
+		makeme(dep = c(skoletype),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(svarprosent_og_deltakere_skoletype_fct_cat_plot_html[[1]]))
+link <- make_link(data = svarprosent_og_deltakere_skoletype_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = svarprosent_og_deltakere_skoletype_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(svarprosent_og_deltakere_skoletype_fct_cat_plot_html)
+```
+
+_Skoletype_. `{r} x`.
+
+:::
+
+
+## Svarprosent{#sec-Svarprosent-35}
+
+
+::: {#fig-svarprosent-og-deltakere-svarprosent-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=2, max_chars_cats_y=10, multiplier_per_plot=0.5)}
+svarprosent_og_deltakere_svarprosent_fct_cat_plot_html <-
+	data_5_Svarprosent_ |>
+		makeme(dep = c(svarprosent),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(svarprosent_og_deltakere_svarprosent_fct_cat_plot_html[[1]]))
+link <- make_link(data = svarprosent_og_deltakere_svarprosent_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = svarprosent_og_deltakere_svarprosent_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(svarprosent_og_deltakere_svarprosent_fct_cat_plot_html)
+```
+
+_Svarprosent_. `{r} x`.
+
+:::

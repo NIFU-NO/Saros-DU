@@ -1,0 +1,650 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 4.0
+
+---
+# Læringsutbytte
+```{r}
+#| label: 'Import data for 5_Laringsutbyt'
+data_5_Laringsutbyt <- qs::qread('../5_Laringsutbyt/data_5_Laringsutbyt.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+## Alle forholdene ved studiet tatt i betraktning: Hva er ditt hovedinntrykk av kvaliteten på studiet?{#sec-Alle-forholdene-ved-studiet-tatt-i-betraktning-Hva-er-ditt-hovedinntrykk-av-kvaliteten-pa-studiet--17}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-laringsutbytte-s-86-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=24)
+plot <-
+	makeme(data = data_5_Laringsutbyt,
+	dep = c(s_86),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-laringsutbytte-s-86-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=24)
+plot <-
+	makeme(data = data_5_Laringsutbyt,
+	dep = c(s_86),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Alle forholdene ved studiet tatt i betraktning: Hva er ditt hovedinntrykk av kvaliteten på studiet?_ by __
+
+:::
+
+
+## Alt i alt, hvor fornøyd er du med studiets opplæring i digitale ressurser?{#sec-Alt-i-alt-hvor-fornoyd-er-du-med-studiets-opplaring-i-digitale-ressurser--35}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-laringsutbytte-s-53-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=22)
+plot <-
+	makeme(data = data_5_Laringsutbyt,
+	dep = c(s_53),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-laringsutbytte-s-53-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=22)
+plot <-
+	makeme(data = data_5_Laringsutbyt,
+	dep = c(s_53),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Alt i alt, hvor fornøyd er du med studiets opplæring i digitale ressurser?_ by __
+
+:::
+
+
+## Dersom det er andre deler ved studiet som har vært viktig for ditt læringsutbytte kan du skrive det her:{#sec-Dersom-det-er-andre-deler-ved-studiet-som-har-vart-viktig-for-ditt-laringsutbytte-kan-du-skrive-det-her--02}
+
+
+::: {#tbl-laringsutbytte-s-46-chr-chr-table-target}
+
+```{r}
+table <-
+	makeme(data = data_5_Laringsutbyt,
+		dep = c(s_46),
+		type = 'chr_table_html',
+		crowd='target',
+		mesos_var = params$mesos_var,
+		mesos_group = params$mesos_group)
+gt(table[[1]])
+```
+
+_Dersom det er andre deler ved studiet som har vært viktig for ditt læringsutbytte kan du skrive det her:_ for `{r} params$mesos_group`.
+
+:::
+
+
+## Dersom du har tilbakemeldinger om videreutdanningen generelt, kan du skrive det her:{#sec-Dersom-du-har-tilbakemeldinger-om-videreutdanningen-generelt-kan-du-skrive-det-her--17}
+
+
+::: {#tbl-laringsutbytte-s-99-chr-chr-table-target}
+
+```{r}
+table <-
+	makeme(data = data_5_Laringsutbyt,
+		dep = c(s_99),
+		type = 'chr_table_html',
+		crowd='target',
+		mesos_var = params$mesos_var,
+		mesos_group = params$mesos_group)
+gt(table[[1]])
+```
+
+_Dersom du har tilbakemeldinger om videreutdanningen generelt, kan du skrive det her:_ for `{r} params$mesos_group`.
+
+:::
+
+
+## Dersom du ønsker å utdype hva som har vært positivt og negativt for ditt læringsutbytte med tilretteleggingen, eller mangelen på tilrettelegging, kan du skrive det her:{#sec-Dersom-du-onsker-a-utdype-hva-som-har-vart-positivt-og-negativt-for-ditt-laringsutbytte-med-tilretteleggingen-eller-mangelen-pa-tilrettelegging-kan-du-skrive-det-her--14}
+
+
+::: {#tbl-laringsutbytte-s-30-chr-chr-table-target}
+
+```{r}
+table <-
+	makeme(data = data_5_Laringsutbyt,
+		dep = c(s_30),
+		type = 'chr_table_html',
+		crowd='target',
+		mesos_var = params$mesos_var,
+		mesos_group = params$mesos_group)
+gt(table[[1]])
+```
+
+_Dersom du ønsker å utdype hva som har vært positivt og negativt for ditt læringsutbytte med tilretteleggingen, eller mangelen på tilrettelegging, kan du skrive det her:_ for `{r} params$mesos_group`.
+
+:::
+
+
+## Hvis du ønsker kan du utdype hvordan studiet har relatert seg til din praksis her:{#sec-Hvis-du-onsker-kan-du-utdype-hvordan-studiet-har-relatert-seg-til-din-praksis-her--73}
+
+
+::: {#tbl-laringsutbytte-s-72-chr-chr-table-target}
+
+```{r}
+table <-
+	makeme(data = data_5_Laringsutbyt,
+		dep = c(s_72),
+		type = 'chr_table_html',
+		crowd='target',
+		mesos_var = params$mesos_var,
+		mesos_group = params$mesos_group)
+gt(table[[1]])
+```
+
+_Hvis du ønsker kan du utdype hvordan studiet har relatert seg til din praksis her:_ for `{r} params$mesos_group`.
+
+:::
+
+
+## Hvor enig er du i følgende utsagn om studiet og din bruk av digitale ressurser?{#sec-Hvor-enig-er-du-i-folgende-utsagn-om-studiet-og-din-bruk-av-digitale-ressurser--49}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-laringsutbytte-s-47-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=9, n_cats_y=5, max_chars_cats_y=14)
+plot <-
+	makeme(data = data_5_Laringsutbyt,
+	dep = c(s_47_1,s_47_2,s_47_3,s_47_4,s_47_5,s_47_6,s_47_7,s_47_8,s_47_9),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-laringsutbytte-s-47-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=9, n_cats_y=5, max_chars_cats_y=14)
+plot <-
+	makeme(data = data_5_Laringsutbyt,
+	dep = c(s_47_1,s_47_2,s_47_3,s_47_4,s_47_5,s_47_6,s_47_7,s_47_8,s_47_9),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Hvor enig er du i følgende utsagn om studiet og din bruk av digitale ressurser?_ by __
+
+:::
+
+
+## Hvor viktig mener du ulike deler av studiet har vært for ditt læringsutbytte? Dersom du ikke har hatt det som inngår i spørsmålet kan du krysse av for «Ikke hatt»{#sec-Hvor-viktig-mener-du-ulike-deler-av-studiet-har-vart-for-ditt-laringsutbytte-Dersom-du-ikke-har-hatt-det-som-inngar-i-sporsmalet-kan-du-krysse-av-for-Ikke-hatt--29}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-laringsutbytte-s-3-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=9, n_cats_y=6, max_chars_cats_y=13)
+plot <-
+	makeme(data = data_5_Laringsutbyt,
+	dep = c(s_30_1,s_30_2,s_30_3,s_30_4,s_30_5,s_30_6,s_31_1,s_31_3,s_31_4),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-laringsutbytte-s-3-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=9, n_cats_y=6, max_chars_cats_y=13)
+plot <-
+	makeme(data = data_5_Laringsutbyt,
+	dep = c(s_30_1,s_30_2,s_30_3,s_30_4,s_30_5,s_30_6,s_31_1,s_31_3,s_31_4),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Hvor viktig mener du ulike deler av studiet har vært for ditt læringsutbytte? Dersom du ikke har hatt det som inngår i spørsmålet kan du krysse av for «Ikke hatt»_ by __
+
+:::
+
+
+## Hvor viktig mener du ulike deler av videreutdanningen har vært for ditt læringsutbytte? Dersom du ikke har hatt det som inngår i spørsmålet kan du krysse av for «Ikke hatt»{#sec-Hvor-viktig-mener-du-ulike-deler-av-videreutdanningen-har-vart-for-ditt-laringsutbytte-Dersom-du-ikke-har-hatt-det-som-inngar-i-sporsmalet-kan-du-krysse-av-for-Ikke-hatt--50}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-laringsutbytte-s-3-fct-cat-plot-html-1-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=5, n_cats_y=6, max_chars_cats_y=13)
+plot <-
+	makeme(data = data_5_Laringsutbyt,
+	dep = c(s_32_1,s_32_2,s_33_3,s_34_1,s_34_2),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-laringsutbytte-s-3-fct-cat-plot-html-1-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=5, n_cats_y=6, max_chars_cats_y=13)
+plot <-
+	makeme(data = data_5_Laringsutbyt,
+	dep = c(s_32_1,s_32_2,s_33_3,s_34_1,s_34_2),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Hvor viktig mener du ulike deler av videreutdanningen har vært for ditt læringsutbytte? Dersom du ikke har hatt det som inngår i spørsmålet kan du krysse av for «Ikke hatt»_ by __
+
+:::
+
+
+## I hvilken grad opplever du at dine forventninger til studiet har blitt oppfylt?{#sec-I-hvilken-grad-opplever-du-at-dine-forventninger-til-studiet-har-blitt-oppfylt--17}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-laringsutbytte-s-31-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_5_Laringsutbyt,
+	dep = c(s_31),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-laringsutbytte-s-31-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_5_Laringsutbyt,
+	dep = c(s_31),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_I hvilken grad opplever du at dine forventninger til studiet har blitt oppfylt?_ by __
+
+:::
+
+
+## I hvilken grad stemmer disse utsagnene?{#sec-I-hvilken-grad-stemmer-disse-utsagnene--75}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-laringsutbytte-s-6-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=6, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_5_Laringsutbyt,
+	dep = c(s_66_1,s_66_2,s_66_7,s_66_3,s_66_4,s_66_5),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-laringsutbytte-s-6-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=6, n_cats_y=5, max_chars_cats_y=18)
+plot <-
+	makeme(data = data_5_Laringsutbyt,
+	dep = c(s_66_1,s_66_2,s_66_7,s_66_3,s_66_4,s_66_5),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_I hvilken grad stemmer disse utsagnene?_ by __
+
+:::
+
+
+## På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av studiets læringsutbytte.{#sec-Pa-en-skala-fra-1-helt-uenig-til-6-helt-enig-vennligst-gi-din-oppfatning-av-studiets-laringsutbytte--04}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-laringsutbytte-s-7-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=10, n_cats_y=6, max_chars_cats_y=14)
+plot <-
+	makeme(data = data_5_Laringsutbyt,
+	dep = c(s_77_1,s_77_2,s_77_3,s_77_4,s_77_5,s_77_6,s_77_7,s_77_8,s_77_9,s_77_10),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-laringsutbytte-s-7-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=10, n_cats_y=6, max_chars_cats_y=14)
+plot <-
+	makeme(data = data_5_Laringsutbyt,
+	dep = c(s_77_1,s_77_2,s_77_3,s_77_4,s_77_5,s_77_6,s_77_7,s_77_8,s_77_9,s_77_10),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av studiets læringsutbytte._ by __
+
+:::
+
+
+## Vennligst ta stilling til følgende utsagn om anvendelse av studiet{#sec-Vennligst-ta-stilling-til-folgende-utsagn-om-anvendelse-av-studiet-77}
+
+
+::: {.panel-tabset}
+
+## Tilbyder
+
+::: {#fig-laringsutbytte-s-73-fct-cat-plot-html-target}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=3, n_cats_y=4, max_chars_cats_y=10)
+plot <-
+	makeme(data = data_5_Laringsutbyt,
+	dep = c(s_73_1,s_73_2,s_73_3),
+	type='cat_plot_html',
+	crowd='target',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+
+## Alle andre
+
+::: {#fig-laringsutbytte-s-73-fct-cat-plot-html-others}
+
+```{r}
+#| fig-height: !expr saros::fig_height_h_barchart(n_y=3, n_cats_y=4, max_chars_cats_y=10)
+plot <-
+	makeme(data = data_5_Laringsutbyt,
+	dep = c(s_73_1,s_73_2,s_73_3),
+	type='cat_plot_html',
+	crowd='others',
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+nrange <- stringi::stri_c('N = ', n_range2(plot[[1]]))
+link <- make_link(data = plot[[1]]$data)
+link_plot <- make_link(data = plot, link_prefix='[PNG](', save_fn = ggsaver, file_suffix = '.png')
+x <-  I(paste0(c(nrange, link, link_plot), collapse = ', '))
+girafe(plot)
+```
+
+`{r} x`.
+
+:::
+
+_Vennligst ta stilling til følgende utsagn om anvendelse av studiet_ by __
+
+:::

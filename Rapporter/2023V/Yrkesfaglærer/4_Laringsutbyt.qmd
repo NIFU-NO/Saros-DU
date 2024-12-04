@@ -1,0 +1,251 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+params:
+  mesos_var: campus2
+  mesos_group: ~
+number-offset: 3.0
+
+---
+# Læringsutbytte
+```{r}
+#| label: 'Import data for 4_Laringsutbyt'
+data_4_Laringsutbyt <- qs::qread('4_Laringsutbyt/data_4_Laringsutbyt.qs')
+```
+```{r}
+source("../general_formatting.R", chdir=TRUE)
+```
+
+## Alle forholdene ved studiet tatt i betraktning: Hva er ditt hovedinntrykk av kvaliteten på studiet?{#sec-Alle-forholdene-ved-studiet-tatt-i-betraktning-Hva-er-ditt-hovedinntrykk-av-kvaliteten-pa-studiet--60}
+
+
+::: {#fig-laringsutbytte-s-86-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=24)}
+laringsutbytte_s_86_fct_cat_plot_html <-
+	data_4_Laringsutbyt |>
+		makeme(dep = c(s_86),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(laringsutbytte_s_86_fct_cat_plot_html[[1]]))
+link <- make_link(data = laringsutbytte_s_86_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = laringsutbytte_s_86_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(laringsutbytte_s_86_fct_cat_plot_html)
+```
+
+_Alle forholdene ved studiet tatt i betraktning: Hva er ditt hovedinntrykk av kvaliteten på studiet?_. `{r} x`.
+
+:::
+
+
+## Alt i alt, hvor fornøyd er du med studiets opplæring i digitale ressurser?{#sec-Alt-i-alt-hvor-fornoyd-er-du-med-studiets-opplaring-i-digitale-ressurser--39}
+
+
+::: {#fig-laringsutbytte-s-53-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=22)}
+laringsutbytte_s_53_fct_cat_plot_html <-
+	data_4_Laringsutbyt |>
+		makeme(dep = c(s_53),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(laringsutbytte_s_53_fct_cat_plot_html[[1]]))
+link <- make_link(data = laringsutbytte_s_53_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = laringsutbytte_s_53_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(laringsutbytte_s_53_fct_cat_plot_html)
+```
+
+_Alt i alt, hvor fornøyd er du med studiets opplæring i digitale ressurser?_. `{r} x`.
+
+:::
+
+
+## Hvor enig er du i følgende utsagn om studiet og din bruk av digitale ressurser?{#sec-Hvor-enig-er-du-i-folgende-utsagn-om-studiet-og-din-bruk-av-digitale-ressurser--44}
+
+
+::: {#fig-laringsutbytte-s-47-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=9, n_cats_y=5, max_chars_cats_y=14)}
+laringsutbytte_s_47_fct_cat_plot_html <-
+	data_4_Laringsutbyt |>
+		makeme(dep = c(s_47_1,s_47_2,s_47_3,s_47_4,s_47_5,s_47_6,s_47_7,s_47_8,s_47_9),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(laringsutbytte_s_47_fct_cat_plot_html[[1]]))
+link <- make_link(data = laringsutbytte_s_47_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = laringsutbytte_s_47_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(laringsutbytte_s_47_fct_cat_plot_html)
+```
+
+_Hvor enig er du i følgende utsagn om studiet og din bruk av digitale ressurser?_. `{r} x`.
+
+:::
+
+
+## Hvor viktig mener du ulike deler av studiet har vært for ditt læringsutbytte? Dersom du ikke har hatt det som inngår i spørsmålet kan du krysse av for «Ikke hatt»{#sec-Hvor-viktig-mener-du-ulike-deler-av-studiet-har-vart-for-ditt-laringsutbytte-Dersom-du-ikke-har-hatt-det-som-inngar-i-sporsmalet-kan-du-krysse-av-for-Ikke-hatt--73}
+
+
+::: {#fig-laringsutbytte-s-3-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=9, n_cats_y=6, max_chars_cats_y=13)}
+laringsutbytte_s_3_fct_cat_plot_html <-
+	data_4_Laringsutbyt |>
+		makeme(dep = c(s_30_1,s_30_2,s_30_3,s_30_4,s_30_5,s_30_6,s_31_1,s_31_3,s_31_4),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(laringsutbytte_s_3_fct_cat_plot_html[[1]]))
+link <- make_link(data = laringsutbytte_s_3_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = laringsutbytte_s_3_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(laringsutbytte_s_3_fct_cat_plot_html)
+```
+
+_Hvor viktig mener du ulike deler av studiet har vært for ditt læringsutbytte? Dersom du ikke har hatt det som inngår i spørsmålet kan du krysse av for «Ikke hatt»_. `{r} x`.
+
+:::
+
+
+## Hvor viktig mener du ulike deler av videreutdanningen har vært for ditt læringsutbytte? Dersom du ikke har hatt det som inngår i spørsmålet kan du krysse av for «Ikke hatt»{#sec-Hvor-viktig-mener-du-ulike-deler-av-videreutdanningen-har-vart-for-ditt-laringsutbytte-Dersom-du-ikke-har-hatt-det-som-inngar-i-sporsmalet-kan-du-krysse-av-for-Ikke-hatt--05}
+
+
+::: {#fig-laringsutbytte-s-3-fct-cat-plot-html-1}
+
+```{r, fig.height = fig_height_h_barchart(n_y=5, n_cats_y=6, max_chars_cats_y=13)}
+laringsutbytte_s_3_fct_cat_plot_html_1 <-
+	data_4_Laringsutbyt |>
+		makeme(dep = c(s_32_1,s_32_2,s_33_3,s_34_1,s_34_2),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(laringsutbytte_s_3_fct_cat_plot_html_1[[1]]))
+link <- make_link(data = laringsutbytte_s_3_fct_cat_plot_html_1[[1]]$data)
+link_plot <- make_link(data = laringsutbytte_s_3_fct_cat_plot_html_1,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(laringsutbytte_s_3_fct_cat_plot_html_1)
+```
+
+_Hvor viktig mener du ulike deler av videreutdanningen har vært for ditt læringsutbytte? Dersom du ikke har hatt det som inngår i spørsmålet kan du krysse av for «Ikke hatt»_. `{r} x`.
+
+:::
+
+
+## I hvilken grad opplever du at dine forventninger til studiet har blitt oppfylt?{#sec-I-hvilken-grad-opplever-du-at-dine-forventninger-til-studiet-har-blitt-oppfylt--00}
+
+
+::: {#fig-laringsutbytte-s-31-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=1, n_cats_y=5, max_chars_cats_y=18)}
+laringsutbytte_s_31_fct_cat_plot_html <-
+	data_4_Laringsutbyt |>
+		makeme(dep = c(s_31),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(laringsutbytte_s_31_fct_cat_plot_html[[1]]))
+link <- make_link(data = laringsutbytte_s_31_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = laringsutbytte_s_31_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(laringsutbytte_s_31_fct_cat_plot_html)
+```
+
+_I hvilken grad opplever du at dine forventninger til studiet har blitt oppfylt?_. `{r} x`.
+
+:::
+
+
+## I hvilken grad stemmer disse utsagnene?{#sec-I-hvilken-grad-stemmer-disse-utsagnene--62}
+
+
+::: {#fig-laringsutbytte-s-6-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=6, n_cats_y=5, max_chars_cats_y=18)}
+laringsutbytte_s_6_fct_cat_plot_html <-
+	data_4_Laringsutbyt |>
+		makeme(dep = c(s_66_1,s_66_2,s_66_7,s_66_3,s_66_4,s_66_5),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(laringsutbytte_s_6_fct_cat_plot_html[[1]]))
+link <- make_link(data = laringsutbytte_s_6_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = laringsutbytte_s_6_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(laringsutbytte_s_6_fct_cat_plot_html)
+```
+
+_I hvilken grad stemmer disse utsagnene?_. `{r} x`.
+
+:::
+
+
+## På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av studiets læringsutbytte.{#sec-Pa-en-skala-fra-1-helt-uenig-til-6-helt-enig-vennligst-gi-din-oppfatning-av-studiets-laringsutbytte--39}
+
+
+::: {#fig-laringsutbytte-s-7-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=10, n_cats_y=6, max_chars_cats_y=14)}
+laringsutbytte_s_7_fct_cat_plot_html <-
+	data_4_Laringsutbyt |>
+		makeme(dep = c(s_77_1,s_77_2,s_77_3,s_77_4,s_77_5,s_77_6,s_77_7,s_77_8,s_77_9,s_77_10),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(laringsutbytte_s_7_fct_cat_plot_html[[1]]))
+link <- make_link(data = laringsutbytte_s_7_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = laringsutbytte_s_7_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(laringsutbytte_s_7_fct_cat_plot_html)
+```
+
+_På en skala fra 1 (helt uenig) til 6 (helt enig), vennligst gi din oppfatning av studiets læringsutbytte._. `{r} x`.
+
+:::
+
+
+## Vennligst ta stilling til følgende utsagn om anvendelse av studiet{#sec-Vennligst-ta-stilling-til-folgende-utsagn-om-anvendelse-av-studiet-72}
+
+
+::: {#fig-laringsutbytte-s-73-fct-cat-plot-html}
+
+```{r, fig.height = fig_height_h_barchart(n_y=3, n_cats_y=4, max_chars_cats_y=10)}
+laringsutbytte_s_73_fct_cat_plot_html <-
+	data_4_Laringsutbyt |>
+		makeme(dep = c(s_73_1,s_73_2,s_73_3),
+		type = 'cat_plot_html')
+nrange <- stringi::stri_c('N = ', n_range2(laringsutbytte_s_73_fct_cat_plot_html[[1]]))
+link <- make_link(data = laringsutbytte_s_73_fct_cat_plot_html[[1]]$data)
+link_plot <- make_link(data = laringsutbytte_s_73_fct_cat_plot_html,
+		file_suffix = '.png', link_prefix='[PNG](',
+		save_fn = ggsaver)
+x <- I(paste0(c(nrange, link, link_plot), collapse=', '))
+girafe(laringsutbytte_s_73_fct_cat_plot_html)
+```
+
+_Vennligst ta stilling til følgende utsagn om anvendelse av studiet_. `{r} x`.
+
+:::

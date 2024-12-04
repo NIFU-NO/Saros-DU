@@ -1,0 +1,8 @@
+---
+params:
+  mesos_var: campus2
+  mesos_group: HiVolda
+---
+
+{{< include ../_5_Svarprosent_.qmd >}}
+

@@ -1,0 +1,9 @@
+---
+title: UiA
+params:
+  mesos_var: campus2
+  mesos_group: UiA
+---
+
+{{< include ../_index.qmd >}}
+
